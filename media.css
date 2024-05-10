@@ -1,0 +1,62 @@
+@media screen and (max-width: 991px) {
+    .logo-nor{
+        display: none !important;
+    }
+    nav{
+        background: #fff !important;
+        padding: 20px 10px 20px 15px !important;
+    }
+    .nav-link{
+        color: #000 !important;
+    }
+    .nav-link:hover{
+        color: #0075CB !important;
+    }
+    .hero-text h1{
+        font-size: 60px;
+    }
+    .additional-items{
+        display: block;
+    }
+    .mob-nav{
+        right: 10%;
+    }
+}
+@media screen and (max-width:771px) {
+    .hero{
+        padding: 0 35px;
+    }
+    .hero-text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+    .hero-text button{
+        width: 70%;
+    }
+    .hero-text h1{
+        font-size: 55px;
+        width: 70%;
+    }
+    .hero-text h4{
+        font-size: 24px;
+    }
+    .mob-nav{
+        right: 12%;
+    }
+}
+@media screen and (max-width:585px) {
+    .hero-text h1{
+        font-size: 45px;
+        font-weight: 900;
+        width: 80%;
+    }
+    .hero-text h4{
+        font-size: 20px;
+    }
+    .mob-nav{
+        right: 15%;
+    }
+}
