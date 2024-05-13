@@ -1,3 +1,13 @@
+@media screen and (max-width:1170px) {
+    .hero-text{
+        margin: 0;
+    }
+}
+@media screen and (max-width:1100px) {
+    .cd-1 h2,.cd-2 h2,.cd-3 h2{
+        bottom: 34%;
+    }
+}
 @media screen and (max-width: 991px) {
     .logo-nor{
         display: none !important;
@@ -20,6 +30,21 @@
     }
     .mob-nav{
         right: 10%;
+    }
+    .cards{
+        flex-direction: column;
+        padding: 0;
+        position: relative;
+        top: 200px;
+    }
+    .cd-1,.cd-2,.cd-3{
+        width: 90% !important;
+        height: 400px !important;
+        background-position: top;
+        bottom: 30%;
+    }
+    .cd-1{
+        background-position: top;
     }
 }
 @media screen and (max-width:771px) {
@@ -47,16 +72,39 @@
         right: 12%;
     }
 }
+@media screen and (max-width:658px) {
+    .cd-1 h2,.cd-2 h2,.cd-3 h2{
+        bottom: 35%;
+    }
+    .cd-1 p,.cd-2 p,.cd-3 p{
+        font-size: 14px;
+    }
+}
 @media screen and (max-width:585px) {
     .hero-text h1{
         font-size: 45px;
         font-weight: 900;
         width: 80%;
     }
+    .mob-nav{
+        right: 17%;
+    }
     .hero-text h4{
         font-size: 20px;
     }
-    .mob-nav{
-        right: 15%;
+    .cd-1 h2,.cd-2 h2,.cd-3 h2{
+        bottom: 42%;
     }
+    .pr-card1,
+        .pr-card2,
+        .pr-card3,
+        .pr-card4,
+        .pr-card5 {
+            width: 100%;
+        }
 }
+@media screen and (max-width:400px) {
+    .mob-nav{
+        right: 20%;
+    }
+}   
