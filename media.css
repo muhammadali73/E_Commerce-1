@@ -46,6 +46,15 @@
     .cd-1{
         background-position: top;
     }
+    .row1 .col-lg-3{
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width:782px) {
+    .special-text p{
+        width: 70%;
+    }
+
 }
 @media screen and (max-width:771px) {
     .hero{
@@ -71,6 +80,16 @@
     .mob-nav{
         right: 12%;
     }
+    .special-text p{
+        line-height: 1.5;
+        width: 80%;
+    }
+}
+@media screen and (max-width:767px) {
+    .row1 img{
+        height: 110px;
+        width: 110px;
+    }
 }
 @media screen and (max-width:658px) {
     .cd-1 h2,.cd-2 h2,.cd-3 h2{
@@ -78,6 +97,9 @@
     }
     .cd-1 p,.cd-2 p,.cd-3 p{
         font-size: 14px;
+    }
+    .special-text p{
+        width: 90%;
     }
 }
 @media screen and (max-width:585px) {
@@ -97,15 +119,82 @@
         bottom: 42%;
     }
     .pr-card1,
-        .pr-card2,
+    .pr-card2,
         .pr-card3,
         .pr-card4,
         .pr-card5 {
             width: 100%;
         }
+        .special-img{
+            background-position: center right;
+        }
+        .special-text{
+            padding: 70px 70px;
+        }
+        .special-text p{
+            width: 100%;
+        }
+        .footer-container h4{
+            font-size: 20px;
+            text-align: center;
+        }
+        .foot-1 h4{
+            font-size: 20px;
+            width: 200px;
+        }
+        .foot-1 img{
+            height: 40px;
+            width: 100px;
+            margin-left: 25px !important;
+        }
+        .foot-2 a,.foot-3 a{
+            width: 150%;
+            font-size: 15px;
+            text-align: center;
+        }
+        .footer-items{
+            flex-direction: column;
+        }
+        .foot-1,.foot-2,.foot-3,.foot-4,.foot-5{
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .foot-4 form{
+            align-items: center;
+        }
+}
+@media screen and (max-width:523px) {
+    .special-text{
+        padding: 70px 35px;
+    }
+    .special-text h2{
+        font-size: 40px;
+        width: 100%;
+    }
+    .special-text h3{
+        font-size: 19px;
+    }
+    .special-text h4{
+        font-size: 20px;
+    }
+    .extra-text{
+        display: none;
+    }
+    .foot-4 input{
+        width: 155%;
+    }
 }
 @media screen and (max-width:400px) {
     .mob-nav{
         right: 20%;
     }
+    .footer-container h4{
+        font-size: 18px;
+        text-align: center;
+    }
 }   
+@media screen and (max-width:384px) {
+    .special-text{
+        padding: 25px;
+    }
+}

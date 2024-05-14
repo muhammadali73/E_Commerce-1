@@ -29,5 +29,17 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0,
         x: -5
     })
-    
+    document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+        var emailInput = document.getElementById("email");
+        var email = emailInput.value.trim();
+        var emailPattern = /^[^\s@]+@gmail\.com$/;
+
+        if (!emailPattern.test(email)) {
+            // Display custom error message
+            emailInput.setCustomValidity("Please enter a valid email address ending with @gmail.com");
+            event.preventDefault(); // Prevent form submission
+        } else {
+            emailInput.setCustomValidity("none"); // Reset error message
+        }
+    });
 });
