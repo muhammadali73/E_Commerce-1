@@ -359,7 +359,7 @@
             background-color: #fff;
             cursor: pointer;
         }
-        .fa-bag-shopping:hover::after {
+        .card-body .fa-bag-shopping:hover::after {
             content: attr(data);
             position: absolute;
             transform: translate(-130%, 0%);
