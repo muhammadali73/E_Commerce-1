@@ -649,3 +649,76 @@ select:focus {
     gap: -5px;
     margin: 7px 0;
 }
+        /* =========================================footer============================================ */
+
+        .footer-container {
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+            padding: 50px 75px !important;
+        }
+        .footer-container h4{
+            font-size: 27px;
+            font-weight: 700;
+            transition: all .7s;
+        }
+        .footer-container h4:hover{
+            color: #0075CB;
+            cursor: pointer;
+        }
+        .footer-items{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 100px !important;
+            background-color: #fff !important;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+        }
+        .foot-1{
+            align-items: center;
+        }
+        .foot-1,.foot-2,.foot-3,.foot-4,.foot-5{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .foot-1 h4{
+            font-weight: 700;
+            margin-top: 20px;
+            font-size: 22px;
+            color: #000;
+        }
+        .foot-2 h5 ,.foot-3 h5{
+            color: #000;
+            font-weight: 500;
+            font-size: 21px;
+        }
+        .foot-2 a,.foot-3 a{
+            text-decoration: none;
+            color: #757575;
+        }
+        .foot-2 a:hover,.foot-3 a:hover{
+            color: #0075CB;
+        }
+        .foot-4 input{
+            padding: 10px 30px 10px 10px;
+            border: 1px solid rgba(128, 128, 128, 0.5);
+        }
+        .foot-4 input:focus{
+            border: 1px solid rgba(128, 128, 128, 0.452)!important;
+        }
+        .foot-4 button{
+            width: 120px;
+            border-radius: 1px !important;
+            height: 40px;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1.1;
+            font-weight: 700;
+        }
+        .foot-4 form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
