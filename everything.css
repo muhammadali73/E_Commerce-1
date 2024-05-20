@@ -327,48 +327,47 @@ select:focus {
 
 [slider] {
     position: relative;
-    height: 3px;
+    height: 14px;
     border-radius: 10px;
     text-align: left;
-    margin: 20px 0 10px 0;
-    width: 88%;
-}
-
-[slider]>div {
+    margin: 45px 0 10px 0;
+    width: 20%;
+  }
+  
+  [slider] > div {
     position: absolute;
     left: 13px;
     right: 15px;
-    height: 3px;
-}
-
-[slider]>div>[inverse-left] {
+    height: 4px;
+  }
+  
+  [slider] > div > [inverse-left] {
     position: absolute;
     left: 0;
-    height: 3px;
+    height: 4px;
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.336);
     margin: 0 7px;
-}
-
-[slider]>div>[inverse-right] {
+  }
+  
+  [slider] > div > [inverse-right] {
     position: absolute;
     right: 0;
-    height: 3px;
+    height: 4px;
     border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.336);
-    ;
+    background-color: rgba(128, 128, 128, 0.336);;
     margin: 0 7px;
-}
-
-[slider]>div>[range] {
-    position: relative;
+  }
+  
+  [slider] > div > [range] {
+    position: absolute;
     left: 0;
-    height: 3px;
+    height: 4px;
     border-radius: 14px;
     background-color: #000;
-}
-
-[slider]>div>[thumb] {
+  }
+  
+  [slider] > div > [thumb] {
     position: absolute;
     top: -7px;
     z-index: 2;
@@ -380,9 +379,9 @@ select:focus {
     background-color: #000;
     border-radius: 50%;
     outline: none;
-}
-
-[slider]>input[type=range] {
+  }
+  
+  [slider] > input[type=range] {
     position: absolute;
     pointer-events: none;
     -webkit-appearance: none;
@@ -396,48 +395,48 @@ select:focus {
     -khtml-opacity: 0;
     opacity: 0;
     cursor: pointer;
-}
-
-div[slider]>input[type=range]::-ms-track {
+  }
+  
+  div[slider] > input[type=range]::-ms-track {
     -webkit-appearance: none;
     background: transparent;
     color: transparent;
-}
-
-div[slider]>input[type=range]::-moz-range-track {
+  }
+  
+  div[slider] > input[type=range]::-moz-range-track {
     -moz-appearance: none;
     background: transparent;
     color: transparent;
-}
-
-div[slider]>input[type=range]:focus::-webkit-slider-runnable-track {
+  }
+  
+  div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
     background: transparent;
     border: transparent;
-}
-
-div[slider]>input[type=range]:focus {
+  }
+  
+  div[slider] > input[type=range]:focus {
     outline: none;
-}
-
-div[slider]>input[type=range]::-ms-thumb {
+  }
+  
+  div[slider] > input[type=range]::-ms-thumb {
     pointer-events: all;
     width: 28px;
     height: 28px;
     border-radius: 0px;
     border: 0 none;
     background: red;
-}
-
-div[slider]>input[type=range]::-moz-range-thumb {
+  }
+  
+  div[slider] > input[type=range]::-moz-range-thumb {
     pointer-events: all;
     width: 28px;
     height: 28px;
     border-radius: 0px;
     border: 0 none;
     background: red;
-}
-
-div[slider]>input[type=range]::-webkit-slider-thumb {
+  }
+  
+  div[slider] > input[type=range]::-webkit-slider-thumb {
     pointer-events: all;
     width: 28px;
     height: 28px;
@@ -445,28 +444,29 @@ div[slider]>input[type=range]::-webkit-slider-thumb {
     border: 0 none;
     background: red;
     -webkit-appearance: none;
-}
-
-div[slider]>input[type=range]::-ms-fill-lower {
+  }
+  
+  div[slider] > input[type=range]::-ms-fill-lower {
     background: transparent;
     border: 0 none;
-}
-
-div[slider]>input[type=range]::-ms-fill-upper {
+  }
+  
+  div[slider] > input[type=range]::-ms-fill-upper {
     background: transparent;
     border: 0 none;
-}
-
-div[slider]>input[type=range]::-ms-tooltip {
+  }
+  
+  div[slider] > input[type=range]::-ms-tooltip {
     display: none;
-}
-
-[slider]>div>[sign] {
+  }
+  
+  [slider] > div > [sign] {
     opacity: 0;
     position: absolute;
     top: -39px;
     left: 0px;
-    z-index: 3;
+    z-index:3;
+    /* background-color: #000; */
     color: #fff;
     width: 28px;
     height: 28px;
@@ -477,9 +477,9 @@ div[slider]>input[type=range]::-ms-tooltip {
     justify-content: center;
     text-align: center;
     color: #000;
-}
-
-[slider] > div > [sign]:after {
+  }
+  
+  [slider] > div > [sign]:after {
     position: absolute;
     content: '';
     left: -15px;
@@ -491,17 +491,17 @@ div[slider]>input[type=range]::-ms-tooltip {
     border-top-style: solid;
     border-top-color: #000;
     display: none;
-}
-
-[slider]>div>[sign]>span {
+  }
+  
+  [slider] > div > [sign] > span {
     font-size: 12px;
     font-weight: 700;
     line-height: 28px;
-}
-
-[slider]:hover>div>[sign] {
+  }
+  
+  [slider]:hover > div > [sign] {
     opacity: 1;
-}
+  }
 
 .values {
     display: flex;
