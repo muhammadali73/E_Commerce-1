@@ -43,3 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Mock product data

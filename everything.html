@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="everything.css">
+  <link rel="stylesheet" href="Emedia.css">
+  <link rel="stylesheet" href="index.html">
   <link rel="icon"
     href="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png"
     sizes="32x32">
@@ -17,7 +19,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/30bec55b03.js" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <title>Store - Brandstore</title>
 </head>
 
 <body>
@@ -30,7 +32,7 @@
     </ul>
     <ul class="off-canvas-nav">
       <li class="nav-item">
-        <a class="nav-link marg" href="#">everything</a>
+        <a class="nav-link marg active" href="#">everything</a>
       </li>
       <hr>
       <li class="nav-item">
@@ -57,12 +59,13 @@
   <div class="main">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <img height="40" class="logo-mob"
-          src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png" alt="">
+        <a href="index.html"><img height="40" class="logo-mob"
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png"
+            alt=""></a>
         <div class="additional-items">
           <ul class="navbar-nav mob-nav">
             <li class="nav-item">
-              <a class="nav-link tp" href="#"><span class="bold me-3">$0.00</span><i
+              <a class="nav-link" href="#"><span class="bold me-3">$0.00</span><i
                   class="fa-solid fa-bag-shopping"></i></a>
             </li>
           </ul>
@@ -74,7 +77,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2">
             <li class="nav-item">
-              <a class="nav-link" href="#">Everything</a>
+              <a class="nav-link" style="color: #0075CB;" href="#">Everything</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">women</a>
@@ -93,9 +96,9 @@
             <li class="nav-item">
               <a class="nav-link light" href="#">contact us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link tp" href="#"><span class="bold me-4">$0.00</span><i
-                  class="fa-solid fa-bag-shopping"></i></a>
+            <li class="nav-item nav-items">
+              <a style="position: relative; top: -3px; color: #000;" class="nav-link tp" href="#"><span
+                  class="bold me-2">$0.00</span><i class="fa-solid fa-bag-shopping"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-solid fa-user"></i></a>
@@ -104,11 +107,179 @@
         </div>
       </div>
     </nav>
+    <div class="container-fluid right-left">
+      <div class="left-side">
+        <input type="text" id="search-input" placeholder="Search products...">
+        <button id="search-button"><i class="fa-solid fa-chevron-right"></i></button>
+        <h4>Fliter by Price</h4>
+        <div slider id="slider-distance">
+          <div>
+            <div inverse-left style="width:0%;"></div>
+            <div inverse-right style="width:0%;"></div>
+            <div range style="left:0%;right:0%;"></div>
+            <span thumb style="left:0%;"></span>
+            <span thumb style="left:100%;"></span>
+            <div class="sign">
+              <span id="min-value">$20</span>
+            </div>
+            <div class="sign">
+              <span id="max-value">$290</span>
+            </div>
+          </div>
+          <input type="range" tabindex="0" value="20" max="290" min="20" step="10" oninput="
+              this.value=Math.min(this.value,this.parentNode.childNodes[5].value-10);
+              var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+              var children = this.parentNode.childNodes[1].childNodes;
+              children[1].style.width=value+'%';
+              children[5].style.left=value+'%';
+              children[7].style.left=value+'%';children[11].style.left=value+'%';
+              children[11].childNodes[1].innerHTML='$'+this.value;" />
+
+          <input type="range" tabindex="0" value="290" max="290" min="20" step="10" oninput="
+              this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-10));
+              var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+              var children = this.parentNode.childNodes[1].childNodes;
+              children[3].style.width=(100-value)+'%';
+              children[5].style.right=(100-value)+'%';
+              children[9].style.left=value+'%';children[13].style.left=value+'%';
+              children[13].childNodes[1].innerHTML='$'+this.value;" />
+          <span id="pricei">Price :</span>
+          <span id="dash">—</span>
+        </div>
+        <button id="filter-button">Filter</button>
+        <h4>Categories</h4>
+        <div class="category">
+          <a href="Accesssories.html">Accesssories</a>
+          <p>(7)</p>
+        </div>
+        <div class="category">
+          <a href="men.html">Men</a>
+          <p>(14)</p>
+        </div>
+        <div class="category">
+          <a href="women.html">Women</a>
+          <p>(17)</p>
+        </div>
+        <h4>Our Best Sellers</h4>
+        <div class="top-seller-cards">
+        <div class="cd">
+          <img
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-300x300.jpg"
+            alt="">
+          <div class="cd-text">
+            <a href="">Blue Denim Shorts</a>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>$130.00</p>
+          </div>
+        </div>
+        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
+        <div class="cd">
+          <img
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans4-300x300.jpg"
+            alt="">
+          <div class="cd-text">
+            <a href="">Dark Gray Jeans</a>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>$150.00</p>
+          </div>
+        </div>
+        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
+        <div class="cd">
+          <img
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
+            alt="">
+          <div class="cd-text">
+            <a href="">DNK Yellow Shoes</a>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>$120.00</p>
+          </div>
+        </div>
+        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
+        <div class="cd">
+          <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans3-300x300.jpg" alt="">
+          <div class="cd-text">
+            <a
+              href="">Blue
+              Slim Fit Blue Jeans</a>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>$150.00</p>
+          </div>
+        </div>
+        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
+        <div class="cd">
+          <img
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans4-300x300.jpg"
+            alt="">
+          <div class="cd-text">
+            <a href="">Basic Gray Jeans</a>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p>$150.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="right-side">
+        <div class="container">
+          <div class="right-top">
+            <a href="index.html">Home/&nbsp;</a>
+            <a href="everything.html">Store/&nbsp;</a>
+            <div id="current-page"></div>
+          </div>
+          <div id="results-summary"></div>
+          <div class="dropdown">
+            <select id="sort-dropdown">
+              <option value="default">Default Sorting</option>
+              <option value="rating">Sort by Average Rating</option>
+              <option value="latest">Sort by Latest</option>
+              <option value="high-low">Sort by High to Low Price</option>
+              <option value="low-high">Sort by Low to High Price</option>
+            </select>
+          </div>
+          <div id="product-container" class="row"></div>
+          <ul id="pagination" class="pagination"></ul>
+          <div class="row" id="product-container"></div>
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="script.js"></script>
+  <script src="main.js"></script>
+  <script src="everything.js"></script>
 </body>
 
 </html>

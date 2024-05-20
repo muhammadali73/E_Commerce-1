@@ -1,0 +1,141 @@
+@media screen and (max-width:991px) {
+    .additional-items{
+        display: block;
+    }
+    .mob-nav{
+        right: 7%;
+    }
+    .right-left{
+        flex-direction: column;
+        padding: 0 !important;
+    }
+    .right-side{
+        order: 1;
+        padding: 0 !important;
+        width: 100%;
+    }
+    .left-side{
+        order: 2;
+        width: 100%;
+        padding: 70px;
+        padding: 10px 20px;
+    }
+    .left-side #search-input{
+        width: 85%;
+        margin-left: 40px;
+    }
+    [slider]{
+        width: 100%;
+        margin: 15px 0;
+    }
+    .line{
+        width: 100% !important;
+    }
+    #dash {
+        display: none;
+    }
+    
+    #pricei {
+        left: 85%;
+    }
+    
+    #min-value {
+        left: 92%;
+    }
+    
+    #max-value {
+        left: 97%;
+    }
+    .right-top{
+        margin-top: 20px;
+    }
+    .dropdown{
+        left: 39%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .mob-nav{
+        right: 11%;
+    }
+    .logo-mob{
+        height: 35px;
+    }
+    .dropdown{
+        left: 30%;
+    }
+    #pricei{
+        left: 82.5%;
+    }
+    #max-value {
+        left: 98%;
+    }
+    .left-side #search-input{
+        width: 80%;
+        margin-left: 40px;
+    }
+}
+@media screen and (max-width: 580px) {
+    .mob-nav{
+        right: 14%;
+        top: 2%;
+    }
+    .logo-mob{
+        height: 30px;
+        position: relative;
+        top: 5px;
+    }
+    nav {
+        background-color: #fff !important;
+        padding: 15px 5px 15px 5px !important;
+    }
+    #pricei{
+        left: 78%;
+    }
+    #max-value {
+        left: 100%;
+    }
+    #results-summary{
+        width: 100%;    
+    }
+    .dropdown{
+        left: 60%;
+    }
+    select{
+        width: 85%;
+    }
+    .left-side #search-input{
+        width: 74%;
+        margin-left: 40px;
+    }
+    .pagination{
+        margin-left: 60px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .mob-nav{
+        right: 18%;
+    }
+    .dropdown{
+        left: 51%;
+    }
+    select{
+        width: 93%;
+        font-size: 14px !important;
+    }
+    #pricei{
+        left: 68%;
+    }
+    #min-value {
+        left: 87%;
+    }
+    .left-side #search-input{
+        width: 72%;
+        margin-left: 10px;
+    }
+}
+@media screen and (max-width:320px) {
+    .left-side #search-input{
+        width: 78%;
+        margin-left: 10px;
+    }
+}
