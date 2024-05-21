@@ -291,17 +291,19 @@ a {
     display: none;
 }
 
-.btn-color {
-    margin: 20px 5px;
+.fa-circle {
+    margin: 20px 2px;
     border: 1px solid transparent;
-    padding: 5px;
+    border-radius: 50%;
+    padding: 1px;
+    cursor: pointer;
 }
 
-.btn-color:hover {
-    border: 2px solid #ccc;
+.fa-circle:hover {
+    border: 1px solid #ccc;
 }
 
-.btn-color:hover::after {
+.fa-circle:hover::after {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
     transform: translate(0%, 0%);
@@ -310,7 +312,7 @@ a {
 .dropdown {
     margin: 20px 0;
     position: absolute;
-    left: 49%;
+    left: 44%;
     width: 45%;
     display: inline-block;
 }
@@ -656,6 +658,7 @@ select:focus {
             background-color: #fff;
             border-bottom: 1px solid rgba(128, 128, 128, 0.212);
             padding: 50px 75px !important;
+            margin-top: 40px;
         }
         .footer-container h4{
             font-size: 27px;

@@ -62,7 +62,7 @@ const products = [
             "aqua": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt2-300x300.jpg",
             "Blue": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt4-300x300.jpg",
             "Green": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt5-300x300.jpg",
-            "pink": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt3-300x300.jpg"
+            "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt3-300x300.jpg"
         },
         rating: 1,
         date:"2024-05-11"
@@ -135,7 +135,7 @@ const products = [
             "aqua": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg",
             "blue": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe5-300x300.jpg",
             "green": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe3-300x300.jpg",
-            "pink": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
+            "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
         },
         rating: 4,
         date:"2024-09-11",
@@ -147,7 +147,7 @@ const products = [
         colors: {
             "blue": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe1-300x300.jpg",
             "green": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg",
-            "pink": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
+            "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
         },
         rating: 1,
         date:"2024-03-31"
@@ -407,9 +407,9 @@ function displayProducts(page) {
 
         if (product.colors) {
             for (const colorOption in product.colors) {
-                const btn = document.createElement('button');
-                btn.classList.add('btn', 'btn-color');
-                btn.style.backgroundColor = colorOption;
+                const btn = document.createElement('i');
+                btn.classList.add('fa-solid', 'fa-circle');
+                btn.style.color = colorOption;
                 btn.title = colorOption; // Set the title attribute to show the color name on hover
                 btn.addEventListener('click', function() {
                     img.src = product.colors[colorOption];

@@ -1,3 +1,26 @@
+@media screen and (max-width:1200px){
+    #pricei{
+        left: 50%;
+    }
+    #min-value{
+        left: 75%;
+    }
+    #dash{
+        left: 64.5%;
+    }
+    #max-value{
+        left: 98%;
+    }
+    .dropdown{
+        left: 42%;
+    }
+    select{
+        width: 65%;
+    }
+    .right-side{
+        padding: 35px 25px;
+    }
+}
 @media screen and (max-width:991px) {
     .additional-items{
         display: block;
