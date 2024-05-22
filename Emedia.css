@@ -46,11 +46,11 @@
     .left-side #search-input{
         width: 85%;
         position: relative;
-        left: 100px;
+        left: 90px;
     }
     #search-button{
         position: relative;
-        left: 100px;
+        left: 90px;
     }
     [slider]{
         width: 100%;
@@ -101,8 +101,7 @@
         left: 98%;
     }
     .left-side #search-input{
-        width: 80%;
-        margin-left: 40px;
+        width: 75%;
     }
     .footer-items{
         flex-direction: column;
@@ -137,7 +136,10 @@
         padding: 15px 5px 15px 5px !important;
     }
     #pricei{
-        left: 78%;
+        left: 73%;
+    }
+    #min-value{
+        left: 88%;
     }
     #max-value {
         left: 98%;
@@ -153,7 +155,10 @@
     }
     .left-side #search-input{
         width: 74%;
-        margin-left: 40px;
+        left: 60px;
+    }
+    .left-side button{
+        left: 55px !important;
     }
     .pagination{
         margin-left: 60px;
@@ -208,9 +213,12 @@
         left: 84%;
     }
     .left-side #search-input{
-        width: 72%;
-        margin-left: 10px;
-    }
+            width: 74%;
+            left: 45px !important;
+        }
+        .left-side button{
+            left: 40px !important;
+        }
     .footer-container h4{
         font-size: 18px;
         text-align: center;
@@ -219,6 +227,9 @@
 @media screen and (max-width:320px) {
     .left-side #search-input{
         width: 78%;
-        margin-left: 10px;
+        left: 25px !important;
+    }
+    .left-side button{
+        left: 25px !important;
     }
 }
