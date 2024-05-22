@@ -45,7 +45,12 @@
     }
     .left-side #search-input{
         width: 85%;
-        margin-left: 40px;
+        position: relative;
+        left: 100px;
+    }
+    #search-button{
+        position: relative;
+        left: 100px;
     }
     [slider]{
         width: 100%;
@@ -75,6 +80,9 @@
     .dropdown{
         left: 39%;
     }
+    .footer-items{
+        padding: 20px 40px !important;
+    }
 }
 @media screen and (max-width: 767px) {
     .mob-nav{
@@ -95,6 +103,23 @@
     .left-side #search-input{
         width: 80%;
         margin-left: 40px;
+    }
+    .footer-items{
+        flex-direction: column;
+    }
+    .foot-1,.foot-2,.foot-3,.foot-4,.foot-5{
+        gap: 12px;
+        margin-top: 10px;
+    }
+    .foot-4 form{
+        align-items: center;
+    }
+    .footer-items h5{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .footer-items a{
+        text-align: center;
     }
 }
 @media screen and (max-width: 580px) {
@@ -133,6 +158,37 @@
     .pagination{
         margin-left: 60px;
     }
+    .footer-container h4{
+        font-size: 20px;
+        text-align: center;
+    }
+    .foot-1 h4{
+        font-size: 20px;
+        width: 200px;
+    }
+    .foot-1 img{
+        height: 40px;
+        width: 100px;
+        margin-left: 25px !important;
+    }
+    .foot-2 a,.foot-3 a{
+        width: 150%;
+        font-size: 15px;
+        text-align: center;
+    }
+    .foot-1,.foot-2,.foot-3,.foot-4,.foot-5{
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .foot-4 form{
+        align-items: center;
+    }
+    .extra-text{
+        display: none;
+    }
+    .foot-4 input{
+        width: 155%;
+    }   
 }
 @media screen and (max-width: 400px) {
     .mob-nav{
@@ -154,6 +210,10 @@
     .left-side #search-input{
         width: 72%;
         margin-left: 10px;
+    }
+    .footer-container h4{
+        font-size: 18px;
+        text-align: center;
     }
 }
 @media screen and (max-width:320px) {

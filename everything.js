@@ -283,26 +283,222 @@ const products = [
 ];
 
 
-const productsPerPage = 12;
-let currentPage = 1;
-let filteredProducts = [...products]; // Use this to store the currently filtered products
-let sortedProducts = [...filteredProducts];
-
 document.addEventListener('DOMContentLoaded', function() {
-    let pageShow = document.getElementById("current-page").textContent = `page ${currentPage}`;
-    pageShow;
+    const productsPerPage = 12;
+    let currentPage = 1;
+    let filteredProducts = [...products]; // Use this to store the currently filtered products
+    let sortedProducts = [...filteredProducts];
+    let totalPrice = 0; // Initialize totalPrice outside
+
+    const pagination = document.getElementById('pagination');
+    const resultsSummary = document.getElementById('results-summary');
+
+    const minPriceInput = document.querySelector('input[type="range"]:first-of-type');
+    const maxPriceInput = document.querySelector('input[type="range"]:last-of-type');
+
+    let cartButtonsInitialized = false;
+
+    function initializeCartButtons() {
+        if (cartButtonsInitialized) return; // Check if buttons are already initialized
+        const cartButtons = document.querySelectorAll('.shopping-bag');
+        const totalPriceElement = document.querySelector('.bold');
+
+        cartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.card');
+                const priceText = card.querySelector('.card-text p').textContent;
+                const price = parseFloat(priceText.replace(/[^0-9.-]+/g, '')); // Use regular expression to extract numbers
+
+                if (!isNaN(price)) { // Check if price is a valid number
+                    totalPrice += price;
+                    totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+                } else {
+                    console.error('Invalid price:', priceText); // Log an error if price is invalid
+                }
+            });
+        });
+
+        cartButtonsInitialized = true; // Set flag to indicate buttons are initialized
+    }
+
+    function createPagination() {
+        const numPages = Math.ceil(sortedProducts.length / productsPerPage);
+        pagination.innerHTML = '';
+
+        const prevButton = createPageButton('<', () => {
+            if (currentPage > 1) {
+                displayProducts(currentPage - 1);
+            }
+        });
+        pagination.appendChild(prevButton);
+
+        for (let i = 1; i <= numPages; i++) {
+            const pageButton = createPageButton(i, () => {
+                displayProducts(i);
+            });
+
+            const pageLi = document.createElement('li');
+            pageLi.classList.add('page-item');
+            if (i === currentPage) {
+                pageLi.classList.add('active');
+            }
+            pageLi.appendChild(pageButton);
+            pagination.appendChild(pageLi);
+        }
+
+        const nextButton = createPageButton('>', () => {
+            if (currentPage < numPages) {
+                displayProducts(currentPage + 1);
+            }
+        });
+        pagination.appendChild(nextButton);
+
+        pagination.style.display = 'flex'; // Show pagination
+    }
+
+    function createPageButton(text, onClick) {
+        const button = document.createElement('button');
+        button.classList.add('page-link');
+        button.textContent = text;
+        button.addEventListener('click', onClick);
+        return button;
+    }
+
+    function sortProducts(type) {
+        sortedProducts = [...filteredProducts]; // Reset to currently filtered products
+
+        if (type === 'rating') {
+            sortedProducts.sort((a, b) => b.rating - a.rating);
+        } else if (type === 'latest') {
+            sortedProducts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        } else if (type === 'high-low') {
+            sortedProducts.sort((a, b) => parseFloat(b.price.replace(/[^0-9.-]+/g,"")) - parseFloat(a.price.replace(/[^0-9.-]+/g,"")));
+        } else if (type === 'low-high') {
+            sortedProducts.sort((a, b) => parseFloat(a.price.replace(/[^0-9.-]+/g,"")) - parseFloat(b.price.replace(/[^0-9.-]+/g,"")));
+        }
+    }
+
+    function displayProducts(page) {
+        currentPage = page;
+        const startIndex = (page - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const productsToShow = sortedProducts.slice(startIndex, endIndex);
+
+        const productContainer = document.getElementById('product-container');
+        productContainer.innerHTML = '';
+
+        if (productsToShow.length === 0) {
+            // Hide pagination, results summary, and product container
+            resultsSummary.textContent = ''; // Clear previous results summary
+            productContainer.innerHTML = '<div class="no-results">No products were found matching your selection.</div>';
+            pagination.style.display = 'none';      
+            return; // Exit the function
+        }
+
+        // If there are products to display, show the pagination and product container
+        resultsSummary.textContent = `Showing ${startIndex + 1}–${Math.min(endIndex, sortedProducts.length)} of ${sortedProducts.length} results`;
+
+        productsToShow.forEach(product => {
+            const cardCol = document.createElement('div');
+            cardCol.classList.add('col-lg-4', 'col-md-4', 'col-12');
+    
+            const card = document.createElement('div');
+            card.classList.add('card', 'mb-3');
+    
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('img-container');
+    
+            const img = document.createElement('img');
+            if (product.colors) {
+                img.src = product.colors[Object.keys(product.colors)[0]]; // Set default image if colors are available
+            } else {
+                img.src = product.imgurl; // Use default image url if colors are not available
+            }
+            img.alt = product.name;
+            img.classList.add('card-img-top');
+            imgContainer.appendChild(img);
+    
+            const shoppingBag = document.createElement('div');
+            shoppingBag.classList.add('shopping-bag');
+            shoppingBag.setAttribute('data-after-text', product.colors ? 'Select Option' : 'Add to Cart');
+            shoppingBag.innerHTML = '<i class="fas fa-shopping-bag"></i>';
+            imgContainer.appendChild(shoppingBag);
+    
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+    
+            const name = document.createElement('h6');
+            name.classList.add('card-title');
+            name.textContent = product.name;
+            cardBody.appendChild(name);
+    
+            const category = document.createElement('a');
+            category.classList.add('card-text');
+            category.textContent = product.category;
+            cardBody.appendChild(category);
+    
+            const price = document.createElement('p');
+            price.classList.add('card-text');
+            price.textContent = `${product.price}`;
+            cardBody.appendChild(price);
+    
+            const colorButtons = document.createElement('div');
+            colorButtons.classList.add('color-buttons');
+    
+            if (product.colors) {
+                for (const colorOption in product.colors) {
+                    const btn = document.createElement('i');
+                    btn.classList.add('fa-solid', 'fa-circle');
+                    btn.style.color = colorOption;
+                    btn.title = colorOption; // Set the title attribute to show the color name on hover
+                    btn.addEventListener('click', function() {
+                        img.src = product.colors[colorOption];
+                    });
+                    colorButtons.appendChild(btn);
+                }
+            }
+    
+            cardBody.appendChild(colorButtons);
+    
+            if (product.rating) {
+                const rating = document.createElement('div');
+                for (let i = 0; i < 5; i++) {
+                    const star = document.createElement('i');
+                    star.classList.add('fas');
+                    star.classList.add('fa-star');
+                    if (i >= product.rating) {
+                        star.classList.remove('fas');
+                        star.classList.add('far'); 
+                    }
+                    rating.appendChild(star);
+                }
+                cardBody.appendChild(rating);
+            }
+    
+            card.appendChild(imgContainer);
+            card.appendChild(cardBody);
+            cardCol.appendChild(card);
+            productContainer.appendChild(cardCol);
+        });
+
+        window.scrollTo(0, 0); // Scroll to top of the page after displaying products
+
+        initializeCartButtons(); // Initialize cart buttons after rendering products
+    }
+
+    // Other functions remain unchanged...
+
     displayProducts(currentPage); // Display the first page of products on page load
     createPagination();
+    initializeCartButtons(); // Initialize cart buttons on page load
 
     document.getElementById('sort-dropdown').addEventListener('change', function() {
         const sortType = this.value;
         sortProducts(sortType);
         displayProducts(1);
         createPagination();
+        initializeCartButtons(); // Reinitialize cart buttons after sorting
     });
-
-    const minPriceInput = document.querySelector('input[type="range"]:first-of-type');
-    const maxPriceInput = document.querySelector('input[type="range"]:last-of-type');
 
     document.getElementById('filter-button').addEventListener('click', function() {
         const minPrice = parseInt(minPriceInput.value);
@@ -321,202 +517,23 @@ document.addEventListener('DOMContentLoaded', function() {
             searchProductsByName(searchQuery);
         }
     });
-});
 
-function sortProducts(type) {
-    sortedProducts = [...filteredProducts]; // Reset to currently filtered products
-
-    if (type === 'rating') {
-        sortedProducts.sort((a, b) => b.rating - a.rating);
-    } else if (type === 'latest') {
-        sortedProducts.sort((a, b) => new Date(b.date) - new Date(a.date));
-    } else if (type === 'high-low') {
-        sortedProducts.sort((a, b) => parseFloat(b.price.replace(/[^0-9.-]+/g,"")) - parseFloat(a.price.replace(/[^0-9.-]+/g,"")));
-    } else if (type === 'low-high') {
-        sortedProducts.sort((a, b) => parseFloat(a.price.replace(/[^0-9.-]+/g,"")) - parseFloat(b.price.replace(/[^0-9.-]+/g,"")));
-    }
-}
-
-function displayProducts(page) {
-    currentPage = page;
-    const startIndex = (page - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
-    const productsToShow = sortedProducts.slice(startIndex, endIndex);
-
-    const productContainer = document.getElementById('product-container');
-    const resultsSummary = document.getElementById('results-summary');
-    productContainer.innerHTML = '';
-
-    if (productsToShow.length === 0) {
-        // Hide pagination, results summary, and product container
-        resultsSummary.textContent = ''; // Clear previous results summary
-        productContainer.innerHTML = '<div class="no-results">No products were found matching your selection.</div>';
-        pagination.style.display = 'none';      
-        return; // Exit the function
+    function filterProductsByPrice(minPrice, maxPrice) {
+        filteredProducts = products.filter(product => {
+            const price = parseFloat(product.price.replace(/[^0-9.-]+/g,""));
+            return price >= minPrice && price <= maxPrice;
+        });
+        sortProducts(document.getElementById('sort-dropdown').value);
+        displayProducts(1);
+        createPagination();
     }
 
-    // If there are products to display, show the pagination and product container
-    resultsSummary.textContent = `Showing ${startIndex + 1}–${Math.min(endIndex, sortedProducts.length)} of ${sortedProducts.length} results`;
-
-    productsToShow.forEach(product => {
-        const cardCol = document.createElement('div');
-        cardCol.classList.add('col-lg-4', 'col-md-4', 'col-12');
-
-        const card = document.createElement('div');
-        card.classList.add('card', 'mb-3');
-
-        const imgContainer = document.createElement('div');
-        imgContainer.classList.add('img-container');
-
-        const img = document.createElement('img');
-        if (product.colors) {
-            img.src = product.colors[Object.keys(product.colors)[0]]; // Set default image if colors are available
-        } else {
-            img.src = product.imgurl; // Use default image url if colors are not available
-        }
-        img.alt = product.name;
-        img.classList.add('card-img-top');
-        imgContainer.appendChild(img);
-
-        const shoppingBag = document.createElement('div');
-        shoppingBag.classList.add('shopping-bag');
-        shoppingBag.setAttribute('data-after-text', product.colors ? 'Select Option' : 'Add to Cart');
-        shoppingBag.innerHTML = '<i class="fas fa-shopping-bag"></i>';
-        imgContainer.appendChild(shoppingBag);
-
-        const cardBody = document.createElement('div');
-        cardBody.classList.add('card-body');
-
-        const name = document.createElement('h6');
-        name.classList.add('card-title');
-        name.textContent = product.name;
-        cardBody.appendChild(name);
-
-        const category = document.createElement('a');
-        category.classList.add('card-text');
-        category.textContent = product.category;
-        cardBody.appendChild(category);
-
-        const price = document.createElement('p');
-        price.classList.add('card-text');
-        price.textContent = `${product.price}`;
-        cardBody.appendChild(price);
-
-        const colorButtons = document.createElement('div');
-        colorButtons.classList.add('color-buttons');
-
-        if (product.colors) {
-            for (const colorOption in product.colors) {
-                const btn = document.createElement('i');
-                btn.classList.add('fa-solid', 'fa-circle');
-                btn.style.color = colorOption;
-                btn.title = colorOption; // Set the title attribute to show the color name on hover
-                btn.addEventListener('click', function() {
-                    img.src = product.colors[colorOption];
-                });
-                colorButtons.appendChild(btn);
-            }
-        }
-
-        cardBody.appendChild(colorButtons);
-
-        if (product.rating) {
-            const rating = document.createElement('div');
-            for (let i = 0; i < 5; i++) {
-                const star = document.createElement('i');
-                star.classList.add('fas'); // Add 'fas' class for Font Awesome solid stars
-                star.classList.add('fa-star');
-                if (i >= product.rating) {
-                    star.classList.remove('fas'); // Remove 'fas' class
-                    star.classList.add('far'); // Add 'far' class for Font Awesome outline stars
-                }
-                rating.appendChild(star);
-            }
-            cardBody.appendChild(rating);
-        }
-
-        card.appendChild(imgContainer);
-        card.appendChild(cardBody);
-        cardCol.appendChild(card);
-        productContainer.appendChild(cardCol);
-    });
-
-    window.scrollTo(0, 0); // Scroll to top of the page after displaying products
-}
-
-function createPagination() {
-    const numPages = Math.ceil(sortedProducts.length / productsPerPage);
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
-
-    const prevButton = document.createElement('button');
-    prevButton.classList.add('page-link');
-    prevButton.textContent = '<';
-    prevButton.addEventListener('click', function() {
-    if (currentPage > 1) {
-    displayProducts(currentPage - 1);
-    const pageShow = document.getElementById("current-page").textContent = `page ${currentPage}`;
-    pageShow;
-    }
-    });
-    const prevLi = document.createElement('li');
-prevLi.classList.add('page-item');
-prevLi.appendChild(prevButton);
-pagination.appendChild(prevLi);
-
-for (let i = 1; i <= numPages; i++) {
-    const pageButton = document.createElement('button');
-    pageButton.classList.add('page-link');
-    pageButton.textContent = i;
-    pageButton.addEventListener('click', function() {
-        displayProducts(i);
-        const pageShow = document.getElementById("current-page").textContent = `page ${currentPage}`;
-        pageShow;
-    });
-
-    const pageLi = document.createElement('li');
-    pageLi.classList.add('page-item');
-    if (i === currentPage) {
-        pageLi.classList.add('active');
-    }
-    pageLi.appendChild(pageButton);
-    pagination.appendChild(pageLi);
-}
-
-const nextButton = document.createElement('button');
-nextButton.classList.add('page-link');
-nextButton.textContent = '>';
-nextButton.addEventListener('click', function() {
-    if (currentPage < numPages) {
-        displayProducts(currentPage + 1);
-        const pageShow = document.getElementById("current-page").textContent = `page ${currentPage}`;
-        pageShow;
+    function searchProductsByName(query) {
+        filteredProducts = products.filter(product =>
+            product.name.toLowerCase().includes(query)
+        );
+        sortProducts(document.getElementById('sort-dropdown').value);
+        displayProducts(1);
+        createPagination();
     }
 });
-
-const nextLi = document.createElement('li');
-nextLi.classList.add('page-item');
-nextLi.appendChild(nextButton);
-pagination.appendChild(nextLi);
-
-pagination.style.display = 'flex'; // Show pagination
-}
-
-function filterProductsByPrice(minPrice, maxPrice) {
-filteredProducts = products.filter(product => {
-const price = parseFloat(product.price.replace(/[^0-9.-]+/g,""));
-return price >= minPrice && price <= maxPrice;
-});
-sortProducts(document.getElementById('sort-dropdown').value);
-displayProducts(1);
-createPagination();
-}
-
-function searchProductsByName(query) {
-filteredProducts = products.filter(product =>
-product.name.toLowerCase().includes(query)
-);
-sortProducts(document.getElementById('sort-dropdown').value);
-displayProducts(1);
-createPagination();
-}

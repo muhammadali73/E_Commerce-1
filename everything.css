@@ -598,7 +598,7 @@ select:focus {
     padding: 5px 10px;
     border-radius: 5px;
     white-space: nowrap;
-    height: 25px;
+    height: 27px;
     font-size: 12.5px;
 }
 
@@ -673,7 +673,7 @@ select:focus {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 50px 100px !important;
+            padding: 50px 80px !important;
             background-color: #fff !important;
             border-bottom: 1px solid rgba(128, 128, 128, 0.212);
         }
