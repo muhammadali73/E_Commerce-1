@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="container">
+      <div id="signup-msg-holder">
+        <p id="signup-error-msg">There was an error during the signup process.</p>
+        <p id="signup-success-msg">You have successfully signed up!</p>
+      </div>
+      <main id="main-holder">
+        <h1 id="signup-header">Sign Up</h1>
+        <form id="signup-form">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="signup-email-field" class="signup-form-field" required>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="signup-username-field" class="signup-form-field" required>
+          <label for="password">Password</label>
+          <div class="password-field-container">
+            <input type="password" name="password" id="signup-password-field" class="signup-form-field" required>
+            <button type="button" id="toggle-password" class="password-toggle"
+              aria-label="Toggle password visibility"></button>
+          </div>
+          <label for="confirm-password">Confirm Password</label>
+          <div class="password-field-container">
+            <input type="password" name="confirm-password" id="signup-confirm-password-field" class="signup-form-field"
+              required>
+            <button type="button" id="toggle-confirm-password" class="password-toggle"
+              aria-label="Toggle password visibility"></button>
+          </div>
+
+          <input type="submit" value="Sign Up" id="signup-form-submit">
+          <p class="acc">Already have an account? <a style="text-decoration: none; color: #007BC0;"
+              href="login.html">Login now</a></p>
+        </form>
+
+      </main>
+      <div class="as">
+        <a style="font-size: 13px; color: gray; text-decoration: none;" href="index.html">← Go to Brandstore</a>
+      </div>
+    </div>
+  </div>
+  <script defer src="signup.js"></script>
+</body>
+
+</html>

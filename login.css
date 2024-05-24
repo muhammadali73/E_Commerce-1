@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #F0F0F1;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 0;
+  position: relative;
+  top: -40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+#main-holder {
+  width: 100%;
+  max-width: 385px;
+  height: auto;
+  margin: auto;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  border: 1px solid gray;
+  padding: 20px;
+}
+
+#login-header {
+  margin-bottom: 20px;
+}
+
+#login-error-msg-holder {
+  width: 100%;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+#login-error-msg, #login-success {
+  max-width: 380px;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: auto;
+  visibility: hidden;
+}
+
+#login-error-msg {
+  border-left: 5px solid #D63638;
+  background-color: #fff;
+  line-height: 1.8;
+  position: relative;
+  top: 60px;
+}
+
+#login-success {
+  background-color: #fff;
+  border-left: 5px solid #006400;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#error-msg-second-line {
+  display: block;
+}
+
+#login-form {
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+.login-form-field {
+  margin-bottom: 4px;
+  border-radius: 3px;
+  padding: 10px;
+  width: calc(100% - 10px);
+  border: 1px solid gray;
+}
+
+label {
+  margin: 5px 0;
+  color: rgb(92, 91, 91);
+}
+
+#login-form-submit {
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: 500;
+  background-color: #0075CB;
+  cursor: pointer;
+  outline: none;
+  align-self: center;
+  justify-self: center;
+  position: absolute;
+  bottom: 3.5%;
+  right: 4%;
+}
+
+#login-form-submit:hover {
+  background-color: #0365aa;
+}
+
+a:hover {
+  color: #0075CB !important;
+}
+
+.acc {
+  margin: 20px 0 10px 0;
+  font-size: 14.5px;
+}
+
+#go-back-button {
+  padding: 7px 10px;
+  background-color: #0075CB;
+  border: none;
+  border-radius: 4px;
+}
+
+#go-back-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#go-back-button:hover {
+  background-color: #0461a3;
+}
+
+#go-back-button a:hover {
+  color: #fff !important;
+}
+
+.as {
+  width: 100%; /* Ensure it takes full width */
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 20px; /* Adjust left padding as needed */
+}
+
+.as a {
+  font-size: 13px;
+  color: gray;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 400px) {
+  #main-holder {
+    max-width: 300px;
+  }
+
+  #login-form-submit {
+    width: 22%;
+    font-size: 12.5px;
+  }
+
+  .acc {
+    font-size: 13px !important;
+    width: 100%;
+    text-align: left;
+  }
+  .as{
+    width: 90%;
+  }
+
+  #login-error-msg, #login-success {
+    width: 82%;
+  }
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+.password-field-container {
+  position: relative;
+}
+
+#password-field {
+  padding-right: 40px; /* Adjust padding to accommodate the button */
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Adjust the position as needed */
+  transform: translateY(-50%);
+  width: 25px; /* Adjust button width */
+  height: 25px; /* Adjust button height */
+  background-image: url('https://tse3.mm.bing.net/th?id=OIP.32AFxKPGbh-H_qiUQDPMfwHaHa&pid=Api&P=0&h=220');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.password-toggle.visible {
+  background-image: url('https://tse2.mm.bing.net/th?id=OIP.Pq_3L5bUYvtl1RR9Ff75LgHaHa&pid=Api&P=0&h=220'); /* Replace 'eye-off-icon.png' with the path to your eye-off icon */
+}
