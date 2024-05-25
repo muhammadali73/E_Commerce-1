@@ -57,7 +57,7 @@ html, body {
   border-radius: 5px;
 }
 
-#signup-error-msg, #signup-success {
+#signup-error-msg, #signup-success-msg {
   max-width: 380px;
   text-align: center;
   padding: 10px;
@@ -105,6 +105,19 @@ html, body {
 label {
   margin: 5px 0;
   color: rgb(92, 91, 91);
+}
+
+.password-field-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: -30px;
 }
 
 #signup-form-submit {
@@ -158,13 +171,13 @@ a:hover {
 }
 
 .as {
-  width: 100%; /* Ensure it takes full width */
+  width: 100%;
   display: flex;
   flex-direction: column;
   line-height: 2;
   text-align: left;
   margin-top: 20px;
-  padding-left: 20px; /* Adjust left padding as needed */
+  padding-left: 20px;
   position: relative;
   top: 25px;
 }
@@ -191,14 +204,16 @@ a:hover {
     width: 60%;
     text-align: left;
   }
-  .as{
+  
+  .as {
     width: 90%;
   }
 
-  #signup-error-msg, #signup-success {
-    width: 82%;
+  #signup-error-msg, #signup-success-msg {
+    width: 100%;
   }
 }
+
 @keyframes shake {
   0% { transform: translateX(0); }
   20% { transform: translateX(-10px); }
@@ -207,37 +222,7 @@ a:hover {
   80% { transform: translateX(10px); }
   100% { transform: translateX(0); }
 }
+
 .shake {
   animation: shake 0.5s ease;
-}
-.password-field-container {
-  position: relative;
-}
-
-.signup-form-field {
-  margin-bottom: 4px;
-  border-radius: 3px;
-  padding: 10px;
-  width: calc(100% - 10px);
-  border: 1px solid gray;
-}
-
-.password-toggle {
-  position: absolute;
-  top: 50%;
-  right: 20px; /* Adjust the position as needed */
-  transform: translateY(-50%);
-  width: 25px; /* Adjust button width */
-  height: 25px; /* Adjust button height */
-  background-image: url('https://tse3.mm.bing.net/th?id=OIP.32AFxKPGbh-H_qiUQDPMfwHaHa&pid=Api&P=0&h=220'); /* Replace 'eye-icon.png' with the path to your eye icon */
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-/* Styling for visible password */
-.password-toggle.visible {
-  background-image: url('https://tse2.mm.bing.net/th?id=OIP.Pq_3L5bUYvtl1RR9Ff75LgHaHa&pid=Api&P=0&h=220'); /* Replace 'eye-off-icon.png' with the path to your eye-off icon */
 }

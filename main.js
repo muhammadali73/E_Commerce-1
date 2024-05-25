@@ -42,6 +42,39 @@ document.addEventListener("DOMContentLoaded", function () {
             emailInput.setCustomValidity("none"); // Reset error message
         }
     });
-});
+    var swiperOptions = {
+        loop: true,
+        freeMode: true,
+        spaceBetween: 30, // Adjust space between slides
+        grabCursor: true,
+        slidesPerView: 5, // Adjust number of slides visible
+        autoplay: {
+            disableOnInteraction: false
+        },
+        speed: 3000,
+        freeModeMomentum: false,
+        breakpoints: {
+            // when window width is >= 1024px
+            1024: {
+                slidesPerView: 5
+            },
+            991: {
+                slidesPerView: 4
+            },
+            // when window width is >= 767px
+            768: {
+                slidesPerView: 3
+            },
+            // when window width is >= 576px
+            576: {
+                slidesPerView: 2
+            },
+            // when window width is >= 400px
+            400: {
+                slidesPerView: 1
+            }
+        }
+    };
 
-// Mock product data
+    var swiper = new Swiper(".swiper-container", swiperOptions);
+});

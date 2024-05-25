@@ -323,20 +323,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function createPagination() {
         const numPages = Math.ceil(sortedProducts.length / productsPerPage);
+        const pagination = document.getElementById('pagination');
         pagination.innerHTML = '';
-
-        const prevButton = createPageButton('<', () => {
+    
+        const prevButton = createPageButton('←', () => {
             if (currentPage > 1) {
                 displayProducts(currentPage - 1);
             }
         });
-        pagination.appendChild(prevButton);
-
+        const prevLi = document.createElement('li');
+        prevLi.classList.add('page-item');
+        prevLi.appendChild(prevButton);
+        pagination.appendChild(prevLi);
+    
         for (let i = 1; i <= numPages; i++) {
             const pageButton = createPageButton(i, () => {
                 displayProducts(i);
             });
-
+    
             const pageLi = document.createElement('li');
             pageLi.classList.add('page-item');
             if (i === currentPage) {
@@ -345,17 +349,20 @@ document.addEventListener('DOMContentLoaded', function() {
             pageLi.appendChild(pageButton);
             pagination.appendChild(pageLi);
         }
-
-        const nextButton = createPageButton('>', () => {
+    
+        const nextButton = createPageButton('→', () => {
             if (currentPage < numPages) {
                 displayProducts(currentPage + 1);
             }
         });
-        pagination.appendChild(nextButton);
-
+        const nextLi = document.createElement('li');
+        nextLi.classList.add('page-item');
+        nextLi.appendChild(nextButton);
+        pagination.appendChild(nextLi);
+    
         pagination.style.display = 'flex'; // Show pagination
     }
-
+    
     function createPageButton(text, onClick) {
         const button = document.createElement('button');
         button.classList.add('page-link');
@@ -363,7 +370,16 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', onClick);
         return button;
     }
-
+    
+    function displayProducts(page) {
+        currentPage = page;
+        // Logic to display products for the given page
+        createPagination(); // Update pagination after changing the page
+    }
+    
+    // Initialize the pagination on page load or after setting sortedProducts and productsPerPage
+    createPagination();
+    
     function sortProducts(type) {
         sortedProducts = [...filteredProducts]; // Reset to currently filtered products
 

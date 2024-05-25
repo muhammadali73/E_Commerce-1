@@ -192,7 +192,7 @@ a:hover {
   }
 
   #login-error-msg, #login-success {
-    width: 82%;
+    width: 76%;
   }
 }
 @keyframes shake {

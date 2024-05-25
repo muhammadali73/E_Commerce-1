@@ -4,6 +4,27 @@ const signupErrorMsg = document.getElementById("signup-error-msg");
 const signupSuccessMsg = document.getElementById("signup-success-msg");
 const mainHolder = document.getElementById("main-holder");
 
+const passwordField = document.getElementById("signup-password-field");
+const confirmPasswordField = document.getElementById("signup-confirm-password-field");
+const togglePasswordFieldButton = document.getElementById("toggle-password");
+const toggleConfirmPasswordFieldButton = document.getElementById("toggle-confirm-password");
+
+togglePasswordFieldButton.addEventListener("click", () => {
+  togglePasswordVisibility(passwordField, togglePasswordFieldButton);
+});
+
+toggleConfirmPasswordFieldButton.addEventListener("click", () => {
+  togglePasswordVisibility(confirmPasswordField, toggleConfirmPasswordFieldButton);
+});
+
+function togglePasswordVisibility(field, button) {
+  const type = field.getAttribute("type") === "password" ? "text" : "password";
+  field.setAttribute("type", type);
+
+  // Change the button icon based on the password visibility
+  button.classList.toggle("visible");
+}
+
 // Hide messages initially
 signupErrorMsg.style.visibility = "hidden";
 signupSuccessMsg.style.visibility = "hidden";
@@ -47,16 +68,16 @@ signupButton.addEventListener("click", (e) => {
     }
 
     // Password validation
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,15}$/;
     if (!passwordRegex.test(password)) {
-        signupErrorMsg.textContent = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+        signupErrorMsg.innerHTML = "Password must be 8-15 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
         signupErrorMsg.style.visibility = "visible"; // Show error message
         mainHolder.classList.add('shake'); // Apply shake animation
         return;
     }
 
     if (password !== confirmPassword) {
-        signupErrorMsg.textContent = "Passwords do not match.";
+        signupErrorMsg.innerHTML = "Passwords do not match.";
         signupErrorMsg.style.visibility = "visible"; // Show error message
         mainHolder.classList.add('shake'); // Apply shake animation
         return;
@@ -77,28 +98,8 @@ signupButton.addEventListener("click", (e) => {
             window.location.href = 'index.html'; // Redirect to login page
         }, 1000); // Delay in milliseconds (1 second in this case)
     } else {
-        signupErrorMsg.textContent = "Please fill in all fields.";
+        signupErrorMsg.innerHTML = "Please fill in all fields.";
         signupErrorMsg.style.visibility = "visible"; // Show error message
         mainHolder.classList.add('shake'); // Apply shake animation
     }
 });
-const passwordField = document.getElementById("signup-password-field");
-const confirmPasswordField = document.getElementById("signup-confirm-password-field");
-const togglePasswordFieldButton = document.getElementById("toggle-password");
-const toggleConfirmPasswordFieldButton = document.getElementById("toggle-confirm-password");
-
-togglePasswordFieldButton.addEventListener("click", () => {
-  togglePasswordVisibility(passwordField, togglePasswordFieldButton);
-});
-
-toggleConfirmPasswordFieldButton.addEventListener("click", () => {
-  togglePasswordVisibility(confirmPasswordField, toggleConfirmPasswordFieldButton);
-});
-
-function togglePasswordVisibility(field, button) {
-  const type = field.getAttribute("type") === "password" ? "text" : "password";
-  field.setAttribute("type", type);
-
-  // Change the button icon based on the password visibility
-  button.classList.toggle("visible");
-}
