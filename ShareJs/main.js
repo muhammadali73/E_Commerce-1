@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         autoplay: {
             disableOnInteraction: false
         },
-        speed: 3000,
+        speed: 1000,
         freeModeMomentum: false,
         breakpoints: {
             // when window width is >= 1024px
