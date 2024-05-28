@@ -95,7 +95,7 @@ signupButton.addEventListener("click", (e) => {
         
         // Redirect to login page after a delay to show success message
         setTimeout(() => {
-            window.location.href = '../index/index.html'; // Redirect to login page
+            window.location.href = '../index.html'; // Redirect to login page
         }, 1000); // Delay in milliseconds (1 second in this case)
     } else {
         signupErrorMsg.innerHTML = "Please fill in all fields.";
