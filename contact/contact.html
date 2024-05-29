@@ -123,28 +123,28 @@
             <h1>We're h<span>ere</span> to help.</h1>
         </div>
         <div class="row">
-            <div class="col-sm-12 col-xl-3">
-                 <div class="card">
+            <div class="col-md-6 col-sm-12 col-lg-3">
+                <div class="card">
                     <h2>Sales</h2>
                     <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
                     <h5>1800 123 4567</h5>
-                 </div>   
+                </div>
             </div>
-            <div class="col-sm-12 col-xl-3">
-                 <div class="card">
+            <div class="col-md-6 col-sm-12 col-lg-3">
+                <div class="card">
                     <h2>Complaints</h2>
                     <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
                     <h5>1900 223 8899</h5>
-                 </div>   
+                </div>
             </div>
-            <div class="col-sm-12 col-xl-3">
-                 <div class="card">
+            <div class="col-md-6 col-sm-12 col-lg-3">
+                <div class="card">
                     <h2>Returns</h2>
                     <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
                     <h5>returns@mail.com</h5>
-                 </div>   
+                </div>
             </div>
-            <div class="col-sm-12 col-xl-3">
+            <div class="col-md-6 col-sm-12 col-lg-3">
                 <div class="card">
                     <h2>Marketing</h2>
                     <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
@@ -156,20 +156,27 @@
     <div class="listen">
         <div class="listen-left">
             <div class="listen-text">
-            <p class="f-p">Don't be a stranger!</p>
-            <h1>You tell us. We listen.</h1>
-            <p>Cras elementum finibus lacus nec lacinia. Quisque non convallis nisl, eu condimentum sem. Proin dignissim libero lacus, ut eleifend magna vehicula et. Nam mattis est sed tellus.</p>
-        </div>
-        </div>
-        <div class="listen-right">
-            <input type="name" placeholder="NAME" class="same">
-            <input type="subject" placeholder="SUBJECT" class="same">
-            <input type="email" placeholder="EMAIL" class="same">
-            <div class="resizable-textarea-wrapper">
-                <textarea placeholder="MESSAGE" class="resizable-textarea" id="resizableTextarea"></textarea>
-                <div class="resize-handle" id="resizeHandle">↘</div>
+                <p class="f-p">Don't be a stranger!</p>
+                <h1>You tell us. We listen.</h1>
+                <p>Cras elementum finibus lacus nec lacinia. Quisque non convallis nisl, eu condimentum sem. Proin
+                    dignissim libero lacus, ut eleifend magna vehicula et. Nam mattis est sed tellus.</p>
             </div>
-            <button>SEND MESSAGE</button>
+        </div>
+        <div class="listen-right" id="listenRight">
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="NAME" class="same" required>
+                <input type="text" name="subject" placeholder="SUBJECT" class="same">
+                <input type="email" name="email" placeholder="EMAIL" class="same" required>
+                <div class="resizable-textarea-wrapper">
+                    <textarea placeholder="MESSAGE" class="resizable-textarea" id="resizableTextarea"
+                        required></textarea>
+                    <div class="resize-handle" id="resizeHandle">↘</div>
+                </div>
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+            <div id="thankYouMessage" style="display: none;">
+                Thanks for contacting us! We will be in touch with you shortly.
+            </div>
         </div>
     </div>
     <footer class="section-padding">
@@ -208,34 +215,11 @@
             </div>
         </div>
     </footer>
-    <script>
-               const textarea = document.getElementById('resizableTextarea');
-        const resizeHandle = document.getElementById('resizeHandle');
-        let isResizing = false;
-
-        resizeHandle.addEventListener('mousedown', function(e) {
-            isResizing = true;
-            e.preventDefault(); // Prevent text selection
-        });
-
-        document.addEventListener('mousemove', function(e) {
-            if (!isResizing) return;
-
-            const textareaRect = textarea.getBoundingClientRect();
-            const newHeight = Math.min(300, e.clientY - textareaRect.top); // Restrict max height to 150px
-            if (newHeight >= 50) { // Restrict minimum height to 50px
-                textarea.style.height = newHeight + 'px';
-            }
-        });
-
-        document.addEventListener('mouseup', function() {
-            isResizing = false;
-        });
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../ShareJs/main.js"></script>
+    <script src="./contact.js"></script>
 </body>
 
 </html>
