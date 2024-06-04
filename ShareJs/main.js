@@ -77,4 +77,69 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     var swiper = new Swiper(".swiper-container", swiperOptions);
+    document.addEventListener("DOMContentLoaded", function () {
+        const specificCards = document.querySelectorAll('.specific-card');
+  
+        specificCards.forEach(card => {
+          const colorBalls = card.querySelectorAll('.fa-circle');
+  
+          colorBalls.forEach(ball => {
+            ball.addEventListener('click', function () {
+              const newImage = this.getAttribute('data-image');
+              const cardBody = this.closest('.card-body');
+              const imgElement = cardBody.querySelector('.card-img-top');
+              imgElement.src = newImage;
+            });
+          });
+        });
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        const cartAmountElement = document.querySelector('.add-amount');
+        let totalAmount = 0.00;
+  
+        document.querySelectorAll('.bags').forEach(icon => {
+          icon.addEventListener('click', function () {
+            const price = parseFloat(this.getAttribute('data-price'));
+            totalAmount += price;
+            cartAmountElement.innerHTML = `$${totalAmount.toFixed(2)}`;
+            cartAmountElement.classList.add('added');
+  
+            setTimeout(() => {
+              cartAmountElement.classList.remove('added');
+            }, 2000);
+  
+            // Get the position of the clicked bag icon
+            const iconRect = this.getBoundingClientRect();
+            const iconStyle = getComputedStyle(this);
+  
+            // Create ball element
+            const ball = document.createElement('div');
+            ball.classList.add('scale-ball');
+            ball.style.top = iconRect.top + 'px';
+            ball.style.left = iconRect.left + 'px';
+            ball.style.width = iconStyle.width;
+            ball.style.height = iconStyle.height;
+  
+            document.body.appendChild(ball);
+  
+            // Add animation classes
+            setTimeout(() => {
+              ball.classList.add('ball-scale-up');
+            }, 0);
+  
+            setTimeout(() => {
+              ball.classList.remove('ball-scale-up');
+              ball.classList.add('ball-scale-up');
+            }, 200);
+  
+            setTimeout(() => {
+              ball.remove();
+              this.style.display = 'inline';
+            }, 800);
+  
+            // Hide bag icon
+            this.style.display = 'none';
+          });
+        });
+      });
 });

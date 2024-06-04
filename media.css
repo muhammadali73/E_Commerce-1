@@ -29,7 +29,7 @@
         display: block;
     }
     .mob-nav{
-        right: 10%;
+        right: 12%;
     }
     .cards{
         flex-direction: column;
@@ -84,7 +84,7 @@
         font-size: 24px;
     }
     .mob-nav{
-        right: 12%;
+        right: 15%;
     }
     .special-text p{
         line-height: 1.5;
@@ -154,7 +154,7 @@
         text-align: center;
     }
     .mob-nav{
-        right: 17%;
+        right: 21%;
     }
     .hero-text h4{
         font-size: 20px;
@@ -206,7 +206,7 @@
 }
 @media screen and (max-width:400px) {
     .mob-nav{
-        right: 20%;
+        right: 26%;
     }
     .footer-container h4{
         font-size: 18px;

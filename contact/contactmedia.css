@@ -25,19 +25,24 @@
     .footer-items {
         padding: 30px 15px !important;
     }
-    .overlay h1{
+
+    .overlay h1 {
         top: 90px;
     }
-    .query{
+
+    .query {
         padding: 0;
     }
-    .query-text{
+
+    .query-text {
         padding: 50px 10px 0 10px;
     }
-    .row{
+
+    .row {
         padding: 30px 40px 50px 40px;
     }
-    .listen{
+
+    .listen {
         padding: 50px 25px;
     }
 }
@@ -47,9 +52,11 @@
         right: 12%;
         top: 16%;
     }
+
     .overlay h1 {
         top: 91px;
     }
+
     .footer-items {
         padding: 30px 10px !important;
         flex-direction: column;
@@ -98,17 +105,20 @@
     .foot-4 input {
         width: 200%;
     }
-    .listen{
+
+    .listen {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 20px 30px;
         gap: 50px;
     }
-    .listen-left{
+
+    .listen-left {
         width: 100%;
     }
-    .listen-right{
+
+    .listen-right {
         width: 100%;
     }
 }
@@ -122,15 +132,23 @@
     .overlay h1 {
         top: 93px;
     }
-    .listen-text{
+
+    .listen-text {
         top: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column; 
+        flex-direction: column;
         text-align: center;
     }
+
+    .listen-right button {
+        left: 9%;
+        padding: 10px;
+        font-size: 14px;
+    }
 }
+
 @media screen and (max-width:523px) {
     .extra-text {
         display: none;
@@ -138,6 +156,10 @@
 
     .foot-4 input {
         width: 130%;
+    }
+
+    .listen-right button {
+        left: 12%;
     }
 }
 
@@ -155,18 +177,32 @@
     .navbar {
         padding: 10px 10px !important;
     }
-    .navbar .container-fluid{
+
+    .navbar .container-fluid {
         padding: 0 !important;
     }
-    .row{
+
+    .row {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .query-text h1{
+
+    .query-text h1 {
         font-size: 32px;
     }
+
     .footer-container h4 {
         font-size: 18px;
         text-align: center;
+    }
+    .listen{
+        padding: 20px 15px;
+    }
+    .listen-right{
+        padding: 15px 15px 70px 15px;
+    }
+    .listen-right button {
+        left: 5%;
+        bottom: 4%;
     }
 }

@@ -61,6 +61,7 @@ nav {
 .fa-user,
 .fa-bag-shopping {
     font-size: 18px !important;
+    display: inline !important;
 }
 
 .tp {
@@ -429,7 +430,7 @@ nav {
     top: -25px;
 }
 
-.fa-circle:hover {
+.fa-circle:hover{
     border: 1px solid grey;
     cursor: pointer;
 }
@@ -617,3 +618,42 @@ nav {
     flex-direction: column;
     width: 100%;
 }
+/* ////////////////////////////////add cart animation/////////////////////////////////////////// */
+.cart-icon{
+    display: inline !important;
+}
+.scale-ball {
+    position: absolute;
+    background-color: #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+    z-index: 1001;
+}
+
+.ball-scale-up {
+    animation: scale-up-down 0.6s ease-in-out forwards;
+}
+
+@keyframes scale-up-down {
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(0.6);  
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.ball-scale-up:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.ball-scale-up:nth-child(3) {
+    animation-delay: 0.4s;
+}   
