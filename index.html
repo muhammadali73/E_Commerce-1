@@ -66,7 +66,7 @@
             <div class="additional-items">
               <ul class="navbar-nav mob-nav">
                 <li class="nav-item">
-                  <a class="nav-link tp" href="#"><span class="bold me-4 add-amount cart-icon">$0.00</span><i
+                  <a class="nav-link tp" href="#"><span class="bold me-4 add-amount cart-icon">$<span class="cart-total">0.00</span></span><i
                       class="fa-solid fa-bag-shopping"></i></a>
                 </li>
               </ul>
@@ -74,41 +74,39 @@
             <button class="navbar-toggler bg-dark" type="button">
               <i class="fa-solid fa-bars"></i>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2">
                 <li class="nav-item">
-                  <a class="nav-link" href="./every/everything.html">Everything</a>
+                  <a class="nav-link" href="../every/everything.html">Everything</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./women/women.html">women</a>
+                  <a class="nav-link" href="../women/women.html">Women</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./men/men.html">men</a>
+                  <a class="nav-link" href="../men/men.html">Men</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./accessories/accessories.html">accessories</a>
+                  <a class="nav-link" href="../accessories/accessories.html">Accessories</a>
                 </li>
               </ul>
               <ul class="navbar-nav right-nav">
                 <li class="nav-item">
-                  <a class="nav-link light" href="./about/about.html">about</a>
+                  <a class="nav-link light" href="../about/about.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link light" href="./contact/contact.html">contact us</a>
+                  <a class="nav-link light" href="../contact/contact.html">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link tp" href="#"><span class="bold me-4 add-amount cart-icon">$0.00</span><i
+                  <a class="nav-link tp" href="#"><span class="bold me-4 add-amount cart-icon">$<span class="cart-total">0.00</span></span><i
                       class="fa-solid fa-bag-shopping"></i></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./login/login.html"><i class="fa-solid fa-user"></i></a>
+                  <a class="nav-link" href="../login/login.html"><i class="fa-solid fa-user"></i></a>
                 </li>
               </ul>
             </div>
           </div>
-        </nav>
-
+        </nav>        
         <div class="hero container-fluid">
           <div class="hero-text">
             <h1 class="center-text">Raining Offers For Hot Summer!</h1>
@@ -276,11 +274,12 @@
         <div class="ccol-sm-12 col-md-6 col-lg-3 specific-card">
           <div class="card pr-card2">
             <div class="card-body">
+              <a href="./detail/anchor.html">
               <img
                 src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory2-300x300.jpg"
-                alt="" class="card-img-top">
-              <i class="fa-solid fa-bag-shopping bags" data="Select Option" data-price="0.00"></i>
-              <h5 class="card-title">Anchor Bracelet</h5>
+                alt="" class="card-img-top"></a>
+              <a style="color: #000;" href="./detail/anchor.html"><i class="fa-solid fa-bag-shopping bags" data="Select Option" data-price="0.00"></i></a>
+              <a href="./detail/anchor.html"><h5 class="card-title">Anchor Bracelet</h5></a>
               <p class="card-text">accessories</p>
               <p class="card-text2">$150.00 - $180.00</p>
               <div class="circle mb-3">
@@ -463,6 +462,117 @@
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/30bec55b03.js" crossorigin="anonymous"></script>
   <script src="./ShareJs/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const total = document.getElementById('total-price');
+      const brownBtn = document.getElementById('brown');
+      const blackBtn = document.getElementById('black');
+      const redBtn = document.getElementById('red');
+      const quantityInput = document.getElementById('quantity');
+      const cartBtn = document.getElementById('btnn');
+      const cartTotalElems = document.querySelectorAll('.cart-total');
+      const offCanvas = document.querySelector('.off-canvas');
+      const overlay = document.querySelector('.overlay');
+      const productImg = document.querySelector('.product-img img');
+  
+      let selectedPrice = 0;
+      let cartTotal = parseFloat(localStorage.getItem('cartTotal')) || 0;
+  
+      const colorImages = {
+        black: 'url-to-black-anchor-image.jpg',
+        brown: 'url-to-brown-anchor-image.jpg',
+        red: 'url-to-red-anchor-image.jpg'
+      };
+  
+      function updateTotal() {
+        const quantity = parseInt(quantityInput.value);
+        if (!isNaN(quantity) && quantity > 0 && selectedPrice > 0) {
+          const totalPrice = quantity * selectedPrice;
+          total.innerHTML = `<h4>$${totalPrice.toFixed(2)}</h4>`;
+          cartBtn.classList.remove('disable');
+          cartBtn.disabled = false;
+          cartBtn.style.opacity = 1;
+        } else {
+          total.innerHTML = '';
+          cartBtn.classList.add('disable');
+          cartBtn.disabled = true;
+        }
+      }
+  
+      function selectColor(price, color) {
+        selectedPrice = price;
+        blackBtn.style.border = '';
+        brownBtn.style.border = '';
+        redBtn.style.border = '';
+        document.getElementById(color).style.border = '1px solid black';
+        productImg.src = colorImages[color];
+        updateTotal();
+      }
+  
+      blackBtn.addEventListener('click', function () {
+        selectColor(150.00, 'black');
+      });
+  
+      brownBtn.addEventListener('click', function () {
+        selectColor(165.00, 'brown');
+      });
+  
+      redBtn.addEventListener('click', function () {
+        selectColor(180.00, 'red');
+      });
+  
+      quantityInput.addEventListener('input', updateTotal);
+  
+      cartBtn.addEventListener('click', function () {
+        const quantity = parseInt(quantityInput.value);
+        if (!isNaN(quantity) && quantity > 0 && selectedPrice > 0) {
+          cartTotal += quantity * selectedPrice;
+          localStorage.setItem('cartTotal', cartTotal.toFixed(2));
+          cartTotalElems.forEach(elem => elem.textContent = cartTotal.toFixed(2));
+          location.reload();  // Reload the page to give feedback to the user
+        }
+      });
+  
+      // Set the cart total from localStorage on page load
+      cartTotalElems.forEach(elem => elem.textContent = cartTotal.toFixed(2));
+  
+      // Function to open off-canvas menu
+      function openOffCanvas() {
+        offCanvas.classList.add('open');
+        overlay.classList.add('show');
+      }
+  
+      // Event listeners to open off-canvas menu
+      document.querySelector('.fa-bag-shopping').addEventListener('click', openOffCanvas);
+      document.querySelector('.cart-total').addEventListener('click', openOffCanvas);
+      document.querySelector('.navbar-toggler').addEventListener('click', function () {
+        offCanvas.classList.toggle('open');
+        overlay.classList.toggle('show');
+      });
+  
+      // Close off-canvas menu when overlay is clicked
+      overlay.addEventListener('click', function () {
+        offCanvas.classList.remove('open');
+        overlay.classList.remove('show');
+      });
+  
+      // Hover effect for the product image
+      productImg.addEventListener('mousemove', function (e) {
+        const rect = productImg.getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within the element
+        const y = e.clientY - rect.top;  // y position within the element
+  
+        const moveX = (x / rect.width - 0.5) * 100; // Larger value for faster movement
+        const moveY = (y / rect.height - 0.5) * 100; // Larger value for faster movement
+  
+        productImg.style.transform = `scale(1.5) translate(${moveX}px, ${moveY}px)`; // Increase scale factor
+      });
+  
+      productImg.addEventListener('mouseleave', function () {
+        productImg.style.transform = 'scale(1) translate(0, 0)';
+      });
+    });
+  </script>  
 </body>
 
 </html>

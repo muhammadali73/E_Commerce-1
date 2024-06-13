@@ -1,0 +1,93 @@
+@media screen and (max-width:991px) {
+    nav{
+        background: #fff !important;
+        padding: 20px 10px 20px 15px !important;
+    }
+    .logo-mob{
+        height: 30px;
+    }
+    .nav-link{
+        color: #000 !important;
+    }
+    .nav-link:hover{
+        color: #0075CB !important;
+    }
+    .hero-text h1{
+        font-size: 60px;
+    }
+    .additional-items{
+        display: block;
+    }
+    .mob-nav{
+        right: 12%;
+    }
+    .footer-items{
+        padding: 30px 15px !important;
+    }
+}
+@media screen and (max-width:771px) {
+    .mob-nav{
+        right: 15%;
+    }
+    .special-text p{
+        line-height: 1.5;
+        width: 80%;
+    }
+    .footer-items{
+        padding: 30px 10px !important;
+        flex-direction: column;
+    }
+    .footer-container h4{
+        font-size: 20px;
+        text-align: center;
+    }
+    .foot-1 h4{
+        font-size: 20px;
+        width: 200px;
+    }
+    .foot-1 img{
+        height: 40px;
+        width: 100px;
+        margin-left: 25px !important;
+    }
+    .foot-2 a,.foot-3 a{
+        width: 150%;
+        font-size: 15px;
+        text-align: center;
+    }
+    .footer-items{
+        flex-direction: column;
+    }
+    .foot-1,.foot-2,.foot-3,.foot-4,.foot-5{
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .foot-4 form{
+        align-items: center;
+    }
+    .foot-4 input{
+        width: 200%;
+    }
+}
+ @media screen and (max-width:585px) {
+    .mob-nav{
+        right: 21%;
+    }
+ }
+ @media screen and (max-width:523px) {
+    .extra-text{
+        display: none;
+    }
+    .foot-4 input{
+        width: 130%;
+    }
+ }
+ @media screen and (max-width:400px) {
+    .mob-nav{
+        right: 26%;
+    }
+    .footer-container h4{
+        font-size: 18px;
+        text-align: center;
+    }
+ }

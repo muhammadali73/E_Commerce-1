@@ -33,7 +33,7 @@ nav {
 
 .nav-link {
     text-decoration: none !important;
-    color: #444746;
+    color: #000 !important;
     margin-top: 15px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -58,6 +58,13 @@ nav {
 .fa-bag-shopping {
     font-size: 18px !important;
 }
+.active{
+    color: #0075CB !important;
+}
+.fa-user{
+    position: relative;
+    top: -1px;
+}
 
 .fa-user:hover {
     color: #0075CB;
@@ -80,7 +87,11 @@ nav {
     right: 8%;
     top: 10%;
 }
-
+.tp{
+    width: 109px;
+    position: relative;
+    top: -3px;
+}
 .off-canvas {
     position: fixed;
     top: 0;

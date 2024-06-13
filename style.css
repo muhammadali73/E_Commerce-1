@@ -4,8 +4,10 @@
     padding: 0;
     font-family: "Lato", sans-serif;
     z-index: 1;
+    }
+    a{
+    text-decoration: none !important;
 }
-
 body,
 html {
     height: 100%;

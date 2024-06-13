@@ -26,7 +26,7 @@
         display: block;
     }
     .mob-nav{
-        right: 7%;
+        right: 12%;
     }
     .right-left{
         flex-direction: column;
@@ -86,7 +86,7 @@
 }
 @media screen and (max-width: 767px) {
     .mob-nav{
-        right: 11%;
+        right: 16%;
     }
     .logo-mob{
         height: 35px;
@@ -123,8 +123,7 @@
 }
 @media screen and (max-width: 580px) {
     .mob-nav{
-        right: 14%;
-        top: 2%;
+        right: 22%;
     }
     .logo-mob{
         height: 30px;
@@ -197,7 +196,7 @@
 }
 @media screen and (max-width: 400px) {
     .mob-nav{
-        right: 18%;
+        right: 28%;
     }
     .dropdown{
         left: 51%;
