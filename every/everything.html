@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../ShareCss/every.css">  
+  <link rel="stylesheet" href="../ShareCss/every.css">
   <link rel="stylesheet" href="../ShareCss/mediaevery.css">
   <link rel="icon"
     href="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png"
@@ -20,6 +20,11 @@
   <script src="https://kit.fontawesome.com/30bec55b03.js" crossorigin="anonymous"></script>
   <title>Store - Brandstore</title>
 </head>
+<style>
+  .card-title {
+    color: #000;
+  }
+</style>
 
 <body>
   <div class="off-canvas d-lg-none">
@@ -55,18 +60,36 @@
       </li>
     </ul>
   </div>
+  <div id="cartCanvas" class="cartClosed">
+    <i class="closeIcon fa-solid fa-xmark"></i>
+    <h6>Shopping Cart</h6>
+    <hr style="color: gray;">
+    <div id="cartItems" class="cart-items text-center"></div>
+    <div class="cart-bottom">
+      <div class="subtotal">
+        <hr style="color: gray;">
+        <h5>Subtotal: <span id="subtotalAmount">$0.00</span></h5>
+        <hr style="color: gray;">
+      </div>
+      <div class="btn-div">
+        <button class="off-btn">
+          <a href="../every/everything.html" style="color: #fff;">CONTINUE SHOPPING</a>
+        </button>
+      </div>
+    </div>
+  </div>    
   <div class="main">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a href="../index.html">
-        <img height="40" class="logo-mob"
-          src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png"
-          alt="Logo"></a>
+          <img height="40" class="logo-mob"
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png"
+            alt="Logo"></a>
         <div class="additional-items">
           <ul class="navbar-nav mob-nav">
             <li class="nav-item">
-              <a class="nav-link tp" href="#"><span class="bold me-4 add-amount cart-icon">$<span class="cart-total">0.00</span></span><i
-                  class="fa-solid fa-bag-shopping"></i></a>
+              <a class="nav-link tp togglers" href="#"><span class="bold me-2 add-amount cart-icon">$<span
+                    class="cart-total">0.00</span></span><i class="fa-solid fa-bag-shopping"></i></a>
             </li>
           </ul>
         </div>
@@ -96,8 +119,8 @@
               <a class="nav-link light" href="../contact/contact.html">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link tp" href="#"><span class="bold me-2 add-amount cart-icon">$<span class="cart-total">0.00</span></span><i
-                  class="fa-solid fa-bag-shopping"></i></a>
+              <a class="nav-link tp togglers" href="#"><span class="bold me-2 add-amount cart-icon">$<span
+                    class="cart-total">0.00</span></span><i class="fa-solid fa-bag-shopping"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../login/login.html"><i class="fa-solid fa-user"></i></a>
@@ -105,7 +128,7 @@
           </ul>
         </div>
       </div>
-    </nav>    
+    </nav>
     <div class="container-fluid right-left">
       <div class="left-side">
         <input type="text" id="search-input" placeholder="Search products...">
@@ -161,92 +184,101 @@
         </div>
         <h4>Our Best Sellers</h4>
         <div class="top-seller-cards">
-        <div class="cd">
-          <img
-            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-300x300.jpg"
-            alt="">
-          <div class="cd-text">
-            <a href="">Blue Denim Shorts</a>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+          <div class="cd">
+            <img
+              src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-300x300.jpg"
+              alt="">
+            <div class="cd-text">
+              <a href="">Blue Denim Shorts</a>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>$130.00</p>
             </div>
-            <p>$130.00</p>
           </div>
-        </div>
-        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
-        <div class="cd">
-          <img
-            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans4-300x300.jpg"
-            alt="">
-          <div class="cd-text">
-            <a href="">Dark Gray Jeans</a>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p>$150.00</p>
+          <div class="line"
+            style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; ">
           </div>
-        </div>
-        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
-        <div class="cd">
-          <img
-            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
-            alt="">
-          <div class="cd-text">
-            <a href="">DNK Yellow Shoes</a>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i> 
+          <div class="cd">
+            <img
+              src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans4-300x300.jpg"
+              alt="">
+            <div class="cd-text">
+              <a href="">Dark Gray Jeans</a>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>$150.00</p>
             </div>
-            <p>$120.00</p>
           </div>
-        </div>
-        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
-        <div class="cd">
-          <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans3-300x300.jpg" alt="">
-          <div class="cd-text">
-            <a
-              href="">Blue
-              Slim Fit Blue Jeans</a>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p>$150.00</p>
+          <div class="line"
+            style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; ">
           </div>
-        </div>
-        <div class="line" style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; "></div>
-        <div class="cd">
-          <img
-            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans4-300x300.jpg"
-            alt="">
-          <div class="cd-text">
-            <a href="">Basic Gray Jeans</a>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+          <div class="cd">
+            <img
+              src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
+              alt="">
+            <div class="cd-text">
+              <a href="">DNK Yellow Shoes</a>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>$120.00</p>
             </div>
-            <p>$150.00</p>
+          </div>
+          <div class="line"
+            style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; ">
+          </div>
+          <div class="cd">
+            <img
+              src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans3-300x300.jpg"
+              alt="">
+            <div class="cd-text">
+              <a href="">Blue
+                Slim Fit Blue Jeans</a>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>$150.00</p>
+            </div>
+          </div>
+          <div class="line"
+            style="background-color: rgba(128, 128, 128, 0.2); height: .5px; width: 90%; margin: auto; margin-bottom: 10px; display: inline-block; position: relative; top: -15px; ">
+          </div>
+          <div class="cd">
+            <img
+              src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans4-300x300.jpg"
+              alt="">
+            <div class="cd-text">
+              <a href="">Basic Gray Jeans</a>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p>$150.00</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
       <div class="right-side">
         <div class="container">
           <div class="right-top">
@@ -267,7 +299,7 @@
           <div id="product-container" class="row"></div>
           <nav aria-label="Page navigation">
             <ul id="pagination" class="pagination"></ul>
-        </nav>        
+          </nav>
         </div>
       </div>
     </div>
@@ -277,7 +309,9 @@
       </div>
       <div class="container-fluid footer-items">
         <div class="foot-1">
-          <img height="33" width="90" src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png" alt="">
+          <img height="33" width="90"
+            src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png"
+            alt="">
           <h4 class="text-center">The best look anytime, anywhere.</h4>
         </div>
         <div class="foot-2">
@@ -299,9 +333,9 @@
         <div class="foot-4">
           <h5>Subscribe</h5>
           <form action="" id="subscribeForm">
-          <input type="email" placeholder="Your email address..." required id="email">
-          <button class="btn btn-primary" id="submit">SUBSCRIBE</button>
-        </form>
+            <input type="email" placeholder="Your email address..." required id="email">
+            <button class="btn btn-primary" id="submit">SUBSCRIBE</button>
+          </form>
         </div>
       </div>
     </footer>

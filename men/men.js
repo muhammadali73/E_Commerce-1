@@ -5,7 +5,8 @@ const products = [
         category: "Men",
         price: "$150.00",
         rating: 2,
-        date:"2024-02-01"
+        date:"2024-02-01",
+        link: "../detail/BlackHoodie.html"
     },
     {
         name: "Blue Hoodie",
@@ -13,7 +14,8 @@ const products = [
         category: "Men",
         price: "$150.00",
         rating: 2,
-        date:"2024-12-26"
+        date:"2024-12-26",
+        link: "../detail/BlueHoodie.html"
     }, {
         name: "Blue T-Shirt",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt2-300x300.jpg",
@@ -26,28 +28,32 @@ const products = [
             "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt3-300x300.jpg"
         },
         rating: 1,
-        date:"2024-05-11"
+        date:"2024-05-11",
+        link: "../detail/BlueTShirt.html"
     }, {
         name: "Dark Blue Denim Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans2-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 3,
-        date:"2024-08-07"
+        date:"2024-08-07",
+        link: "../detail/DarkBlueDenimJeans.html"
     }, {
         name: "Dark Brown Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans1-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 1,
-        date:"2024-11-05"
+        date:"2024-11-05",
+        link: "../detail/DarkBrownJeans.html"
     }, {
-        name: "Dark Grey Jeans",
+        name: "Dark Gray Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans4-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 5,
-        date:"2024-07-1"
+        date:"2024-07-1",
+        link: "../detail/DarkGrayJeans.html"
     }, {
         name: "DNK Blue Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe1-300x300.jpg",
@@ -59,7 +65,8 @@ const products = [
             "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
         },
         rating: 1,
-        date:"2024-03-31"
+        date:"2024-03-31",
+        link: "../detail/DNKBlueShoes.html"
     }, {
         name: "DNK Green Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg",
@@ -72,7 +79,8 @@ const products = [
             "red": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
         },
         rating: 2,
-        date:"2024-03-21"
+        date:"2024-03-21",
+        link: "../detail/DNKGreenShoes.html"
     }, {
         name: "DNK Green T-Shirt",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt4-300x300.jpg",
@@ -84,28 +92,32 @@ const products = [
         "orange":"https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt7-300x300.jpg"
         },
         rating: 3,
-        date:"2024-03-06"
+        date:"2024-03-06",
+        link: "../detail/DNKGreenTShirt.html"
     }, {
         name: "DNK Red Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 3,
-        date:"2024-03-09"
+        date:"2024-03-09",
+        link: "../detail/DNKRedShoes.html"
     }, {
         name: "DNK Yellow Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe3-300x300.jpg",
         category: "Men",
         price: "$120.00",
         rating: 5,
-        date:"2024-03-19"
+        date:"2024-03-19",
+        link: "../detail/DNKYellowShoes.html"
     }, {
         name: "Faint Washed Denim Blue Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans3-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 5,
-        date:"2024-03-05"
+        date:"2024-03-05",
+        link: "../detail/FaintBlueJeans.html"
     },
     {
         name: "Green Hoodie",
@@ -113,7 +125,8 @@ const products = [
         category: "Men",
         price: "$150.00",
         rating: 4,
-        date:"2024-03-16"
+        date:"2024-03-16",
+        link: "../detail/GreenHoodie.html"
     },
     {
         name: "Red Hoodie",
@@ -121,7 +134,8 @@ const products = [
         category: "Men",
         price: "$150.00",
         rating: 3,
-        date:"2024-03-12"
+        date:"2024-03-12",
+        link: "../detail/RedHoodie.html"
     },
 ];
 
@@ -333,6 +347,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 cardBody.appendChild(rating);
             }
+            card.classList.add('card', 'mb-3');
+    card.addEventListener('click', () => {
+        window.location.href = product.url; // Navigate to product details page
+    });
     
             card.appendChild(imgContainer);
             card.appendChild(cardBody);

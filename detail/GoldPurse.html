@@ -22,64 +22,11 @@
   <title>Document</title>
 </head>
 <style>
-  #black {
-    color: #000;
-  }
-
-  #red {
-    color: red;
-  }
-
-  #brown {
-    color: brown;
-  }
-
-  #black:hover::after {
-    content: 'black';
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    padding: 2px 5px;
-    border-radius: 3px;
-    white-space: nowrap;
-    font-size: 11px;
-    border-radius: 5px;
-  }
-
-  #brown:hover::after {
-    content: 'brown';
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    padding: 2px 5px;
-    border-radius: 3px;
-    white-space: nowrap;
-    font-size: 11px;
-    border-radius: 5px;
-  }
-
-  #red:hover::after {
-    content: 'red';
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    padding: 2px 5px;
-    border-radius: 3px;
-    white-space: nowrap;
-    font-size: 11px;
-    border-radius: 5px;
+  .fa-times{
+    position: relative;
+    top: -8px;
   }
 </style>
-
 <body>
   <div class="off-canvas d-lg-none">
     <i class="fa-solid fa-xmark"></i>
@@ -172,20 +119,13 @@
         <h6>Shopping Cart</h6>
         <hr style="color: gray;">
         <div id="cartItems" class="cart-items text-center">
-
         </div>
-        <div class="subtotal">
-          <h5>Subtotal: <span id="subtotalAmount">$ 0.00</span></h5>
-        </div>
-        <div class="btn-div">
-          <button class="off-btn">
-            <a href="../every/everything.html" style="color: #fff;">CONTINUE SHOPPING</a>
-          </button>
-        </div>
+        <div class="btn-div"><button class="off-btn"><a href="../every/everything.html" style="color: #fff;">CONTINUE
+              SHOPPING</a></button></div>
       </div>
       <section class="section-main">
         <div class="product-img">
-          <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory2.jpg"
+          <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag4.jpg"
             alt="">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -193,31 +133,25 @@
           <span class="close">&times;</span>
           <img class="modal-content" id="modalImg">
           <p class="text-center position-relative" style="top: 62px; color: #bbb7b7; font-size: 14px;">
-            product-accessory2</p>
+            product-bag4</p>
         </div>
 
         <div class="product-details">
-          <p class="no-hov"><a href="../index.html">Home</a> / <a href="../women/women.html">Women</a> / Anchor Bracelet
+          <p class="no-hov"><a href="../index.html">Home</a> / <a href="../women/women.html">Women</a> / Basic Gray
+            Jeans
           </p>
           <p><a href="../accessories/accessories.html">Accessories,</a><a href="../women/women.html">Women</a></p>
           <h2>
-            Anchor Bracelet</h2>
-          <h3 style="display: inline-block;">$150.00 – $180.00 </h3>
+            Bright Gold Purse With Chain</h2>
+          <h3 style="display: inline-block;">$150.00</h3>
           <p style="display: inline-block;">+ Free Shipping</p>
           <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in
             elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in
             erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit sed.</p>
-          <div class="circle-container">
-            <i class="fa-solid fa-circle" id="black" onclick="selectColor(150, 'black')"></i>
-            <i class="fa-solid fa-circle" id="brown" onclick="selectColor(165, 'brown')"></i>
-            <i class="fa-solid fa-circle" id="red" onclick="selectColor(180, 'red')"></i>
-          </div>
-          <p id="clear-color" onclick="clearBtn()">CLEAR</p>
           <hr>
-          <div id="total-price"></div>
           <div class="cart">
-            <input type="number" placeholder="1" min="1" max="8" id="quantity" value="1">
-            <button class="disable" id="btnn" disabled>ADD TO CART</button>
+            <input type="number" placeholder="1" min="1" max="9" id="quantity" value="1">
+            <button id="btnn" style="opacity: 1;">ADD TO CART</button>
           </div>
           <hr>
           <p>SKU:N/A &nbsp;&nbsp;&nbsp; <span style="font-size: 14px; color: rgb(68, 67, 67);"> Categories</span>: <a
@@ -267,28 +201,23 @@
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-       document.addEventListener('DOMContentLoaded', function () {
-    const total = document.getElementById('total-price');
-    const brownBtn = document.getElementById('brown');
-    const blackBtn = document.getElementById('black');
-    const redBtn = document.getElementById('red');
+      document.addEventListener('DOMContentLoaded', function () {
     const quantityInput = document.getElementById('quantity');
     const cartBtn = document.getElementById('btnn');
     const cartTotalElems = document.querySelectorAll('.cart-total');
     const productImg = document.querySelector('.product-img img');
-    const clearColor = document.getElementById('clear-color');
     const canvas = document.getElementById('cartCanvas');
     const togglers = document.querySelectorAll('.togglers');
     const cartItemsContainer = document.getElementById('cartItems');
     const continueShoppingBtn = document.querySelector('.off-btn');
-    const subtotalElem = document.getElementById('subtotalAmount');
-    const productName = "Anchor Bracelet";
+    const productName = "Bright Gold Purse With Chain";
+    const productPrice = 150.00;
 
     togglers.forEach(toggler => {
         toggler.addEventListener('click', function () {
             canvas.classList.add('cartOpen');
             canvas.classList.remove('cartClosed');
-            updateCartItemsUI();  // Update cart UI when opening the cart
+            updateCartItemsUI();
         });
     });
 
@@ -297,206 +226,128 @@
         canvas.classList.remove('cartOpen');
     });
 
-    let selectedPrice = 0;
-    let selectedColor = ''; // Track selected color
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const colorPrices = {
-        black: 150.00,
-        brown: 165.00,
-        red: 180.00
-    };
-
-    const colorImages = {
-        black: 'https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory2.jpg',
-        brown: 'https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory2-b.jpg',
-        red: 'https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory2-c.jpg'
-    };
-
-    function updateTotal() {
-        const quantity = parseInt(quantityInput.value);
-        if (!isNaN(quantity) && quantity > 0 && selectedPrice > 0) {
-            const totalPrice = quantity * selectedPrice;
-            total.innerHTML = `<h4>$${totalPrice.toFixed(2)}</h4>`;
-            total.style.display = 'block';
-            cartBtn.classList.remove('disable');
-            cartBtn.disabled = false;
-            cartBtn.style.opacity = 1;
-            clearColor.style.display = "block";
-        } else {
-            total.innerHTML = '';
-            cartBtn.classList.add('disable');
-            cartBtn.disabled = true;
-            cartBtn.style.opacity = 0.5;
-        }
-    }
-
-    function clearBtn() {
-        clearColor.style.display = "none";
-        blackBtn.style.border = "none";
-        brownBtn.style.border = "none";
-        redBtn.style.border = "none";
-        total.style.display = 'none';
-        cartBtn.classList.add('disable');
-        cartBtn.disabled = true;
-        cartBtn.style.opacity = 0.5; // Set opacity to 0.5 when button is disabled
-        selectedColor = ''; // Clear selected color
-        selectedPrice = 0; // Clear selected price
-    }
-
-    clearColor.addEventListener('click', clearBtn);
-
-    function selectColor(price, color) {
-        selectedPrice = price;
-        selectedColor = color; // Update selected color
-        blackBtn.style.border = '';
-        brownBtn.style.border = '';
-        redBtn.style.border = '';
-        document.getElementById(color).style.border = '1px solid black';
-        productImg.src = colorImages[color];
-        updateTotal();
-    }
-
-    blackBtn.addEventListener('click', function () {
-        selectColor(150.00, 'black');
-    });
-
-    brownBtn.addEventListener('click', function () {
-        selectColor(165.00, 'brown');
-    });
-
-    redBtn.addEventListener('click', function () {
-        selectColor(180.00, 'red');
-    });
-
-    quantityInput.addEventListener('input', updateTotal);
 
     function addToCart() {
         const quantity = parseInt(quantityInput.value);
-        if (!isNaN(quantity) && quantity > 0 && selectedPrice > 0 && selectedColor) {
-            const existingItem = cartItems.find(item => item.color === selectedColor);
-            if (existingItem) {
-                existingItem.quantity += quantity;
+        if (!isNaN(quantity) && quantity > 0) {
+            const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+
+            if (existingItemIndex > -1) {
+                cartItems[existingItemIndex].quantity += quantity;
             } else {
                 const item = {
-                    quantity: quantity,
-                    price: selectedPrice,
-                    color: selectedColor,
                     name: productName,
-                    img: colorImages[selectedColor] // Include image URL
+                    quantity: quantity,
+                    price: productPrice
                 };
                 cartItems.push(item);
             }
+
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
             updateCartItemsUI();
-            updateCartTotal();
-            document.body.classList.add('fade-out'); // Add the fade-out class to the body
+            updateNavbarTotal();
+
+            document.body.classList.add('fade-out');
             setTimeout(() => {
-                location.reload(); // Reload the page after the transition
-            }, 500); // Match this duration with the CSS transition duration
+                document.body.classList.remove('fade-out');
+            }, 500);
         }
     }
 
-    // Make removeCartItem function available globally
-    window.removeCartItem = function (index) {
-        cartItems.splice(index, 1);
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        updateCartItemsUI();
-        updateCartTotal();
-    }
+    cartBtn.addEventListener('click', addToCart);
 
     function updateCartItemsUI() {
         cartItemsContainer.innerHTML = '';
-        if (cartItems.length === 0) {
-            cartItemsContainer.innerHTML = '<p>No products in the cart</p>';
-        } else {
-            cartItems.forEach((item, index) => {
-                const itemHTML = `
-                    <div class="cart-item">
-                        <div class="push-image">
-                            <img src="${item.img}" alt="${item.name}">
-                        </div>
-                        <span class="item-name">${item.name}</span>
-                        <span>${item.color ? item.color : 'default'}</span> <!-- Check for color -->
-                        <span>${item.quantity} &nbsp;x</span>
-                        <span>$${(item.quantity * item.price).toFixed(2)}</span>
-                        <button class="remove-btn" onclick="removeCartItem(${index})"><i class="fas fa-times"></i></button>
-                    </div>
-                `;
-                cartItemsContainer.innerHTML += itemHTML;
+
+        cartItems.forEach((item, index) => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <p>${item.name} - Quantity: ${item.quantity} - Price: $${item.price * item.quantity}</p>
+                <div class="remove-btn" data-index="${index}"><i class="fa-solid fa-times"></i></div>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        });
+
+        const removeButtons = document.querySelectorAll('.remove-btn');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const index = this.getAttribute('data-index');
+                cartItems.splice(index, 1);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCartItemsUI();
+                updateNavbarTotal();
             });
-        }
-        // Update the subtotal
-        updateCartTotal();
+        });
+
+        updateNavbarTotal();
     }
 
-    function updateCartTotal() {
-        const cartTotal = cartItems.reduce((total, item) => total + (item.quantity * item.price), 0);
-        localStorage.setItem('cartTotal', cartTotal.toFixed(2));
-        cartTotalElems.forEach(elem => elem.textContent = cartTotal.toFixed(2));
-        subtotalElem.textContent = "$" + cartTotal.toFixed(2);
+    function updateNavbarTotal() {
+        let total = 0;
+        cartItems.forEach(item => {
+            total += item.price * item.quantity;
+        });
+
+        cartTotalElems.forEach(elem => {
+            elem.textContent = `${total.toFixed(2)}`;
+        });
     }
+        productImg.addEventListener('mousemove', function (e) {
+          const rect = productImg.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const moveX = e.clientX - centerX;
+          const moveY = e.clientY - centerY;
+          const maxMovement = 50;
+          const translationX = (moveX / centerX) * maxMovement * -1;
+          const translationY = (moveY / centerY) * maxMovement * -1;
+          productImg.style.transform = `scale(1.5) translate(${translationX}px, ${translationY}px)`;
+        });
 
-    cartBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-        quantityInput.value = 1;
-        addToCart();
-    });
+        productImg.addEventListener('mouseleave', function () {
+          productImg.style.transform = 'scale(1) translate(0, 0)';
+        });
 
-    productImg.addEventListener('mousemove', function (e) {
-        const rect = productImg.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const moveX = e.clientX - centerX;
-        const moveY = e.clientY - centerY;
-        const maxMovement = 50;
-        const translationX = (moveX / centerX) * maxMovement * -1;
-        const translationY = (moveY / centerY) * maxMovement * -1;
-        productImg.style.transform = `scale(1.5) translate(${translationX}px, ${translationY}px)`;
-    });
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const magnifyingGlass = document.querySelector('.fa-magnifying-glass');
+        const closeModal = document.querySelector('.close');
 
-    productImg.addEventListener('mouseleave', function () {
-        productImg.style.transform = 'scale(1) translate(0, 0)';
-    });
+        magnifyingGlass.addEventListener('click', function () {
+          modal.style.display = 'block';
+          modalImg.src = productImg.src;
+        });
 
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImg');
-    const magnifyingGlass = document.querySelector('.fa-magnifying-glass');
-    const closeModal = document.querySelector('.close');
+        closeModal.addEventListener('click', function () {
+          modal.style.display = 'none';
+        });
 
-    magnifyingGlass.addEventListener('click', function () {
-        modal.style.display = 'block';
-        modalImg.src = productImg.src;
-    });
-
-    closeModal.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function (e) {
-        if (e.target == modal) {
+        window.addEventListener('click', function (e) {
+          if (e.target == modal) {
             modal.style.display = 'none';
-        }
-    });
+          }
+        });
 
-    modalImg.addEventListener('click', function (e) {
-        const rect = modalImg.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left;
-        const offsetY = e.clientY - rect.top;
+        modalImg.addEventListener('click', function (e) {
+          const rect = modalImg.getBoundingClientRect();
+          const offsetX = e.clientX - rect.left;
+          const offsetY = e.clientY - rect.top;
 
-        if (modalImg.style.transform === 'scale(2)') {
+          if (modalImg.style.transform === 'scale(2)') {
             modalImg.style.transform = 'scale(1)';
             modal.style.overflow = 'hidden';
             modalImg.style.cursor = "zoom-in";
-        } else {
+          } else {
             modalImg.style.transform = 'scale(2)';
             modalImg.style.transformOrigin = `${(offsetX / rect.width) * 100}% ${(offsetY / rect.height) * 100}%`;
             modalImg.style.cursor = "zoom-out";
-        }
-    });
-
-    updateCartItemsUI(); // Initialize the cart UI
-    updateCartTotal();
-});
+          }
+        });
+        updateCartItemsUI();
+        updateNavbarTotal();
+      });
     </script>
 </body>
 

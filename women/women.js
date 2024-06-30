@@ -10,37 +10,42 @@ const products = [
             "orange": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory2-c-300x300.jpg"
         },
         rating: 5,
-        date:"2024-05-15"
+        date:"2024-05-15",
+        url: "../detail/anchor.html"
     }, {
         name: "Basic Grey Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans4-300x300.jpg",
         category: "Women",
         price: "$150.00",
         rating: 4,
-        date:"2024-05-18"
+        date:"2024-05-18",
+        url: "../detail/BGJeans.html"
     }, {
         name: "Black Over-the-shoulder Handbag",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag2-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
         rating: 3,
-        date:"2024-06-29"
+        date:"2024-06-29",
+        url: "../detail/ShoulderBag.html"
     }, {
         name: "Blue Denim Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans2-300x300.jpg",
         category: "women",
         price: "$150.00",
         rating: 2,
-        date:"2024-08-17"
+        date:"2024-08-17",
+        url: "../detail/BlueDenimJeans.html"
     }, {
         name: "Blue Denim Shorts",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-300x300.jpg",
         category: "Women",
         price: `$130.00`,
         rating: 5,
-        date:"2024-10-19"
+        date:"2024-10-19",
+        url: "../detail/BlueDenimShorts.html"
     }, {
-        name: "Baho Bangle Bracelet",
+        name: "Boho Bangle Bracelet",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory1-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
@@ -50,14 +55,16 @@ const products = [
             "red": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory1-b-300x300.jpg"
         },
         rating: 3,
-        date:"2024-05-18"
+        date:"2024-05-18",
+        url: "../detail/BohoBangleBracelet.html"
     }, {
         name: "Bright Gold Purse With Chain",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag4-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
         rating: 4,
-        date:"2024-07-09"
+        date:"2024-07-09",
+        url: "../detail/BrightGoldPurse.html"
     }, {
         name: "Bright Red Bag",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-300x300.jpg",
@@ -70,14 +77,16 @@ const products = [
             "red": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-300x300.jpg"
         },
         rating: 5,
-        date:"2024-02-13"
+        date:"2024-02-13",
+        url: "../detail/BrightRedBag.html"
     }, {
         name: "Buddha Bracelet",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory3-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
         rating: 2,
-        date:"2024-11-01"
+        date:"2024-11-01",
+        url: "../detail/BuddhaBracelet.html"
     }, {
         name: "DNK Black Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg",
@@ -91,6 +100,7 @@ const products = [
         },
         rating: 4,
         date:"2024-09-11",
+        url: "../detail/DNKBlackShoes.html"
     },
     {
         name: "Filmingo T-Shirt",
@@ -98,7 +108,8 @@ const products = [
         category: "Women",
         price: "$25.00 - $28.00",
         rating: 4,
-        date:"2024-03-18"
+        date:"2024-03-18",
+        url: "../detail/FilmingoTShirt.html"
     },
     {
         name: "Gray Pattern T-shirt",
@@ -112,7 +123,8 @@ const products = [
         "purple":"https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt3-300x300.jpg"
         },
         rating: 2,
-        date:"2024-03-17"
+        date:"2024-03-17",
+        url: "../detail/GrayPatternTShirt.html"
     },
     {
         name: "Lemons T-shirt",
@@ -120,7 +132,8 @@ const products = [
         category: "Women",
         price: "$25.00 - $28.00",
         rating: 2,
-        date:"2024-03-15"
+        date:"2024-03-15",
+        url: "../detail/LemonsTShirt.html"
     },
     {
         name: "Light Brown Purse",
@@ -128,7 +141,8 @@ const products = [
         category: "Accessories",
         price: "$150.00",
         rating: 1,
-        date:"2024-03-14"
+        date:"2024-03-14",
+        url: "../detail/LightBrownPurse.html"
     },
     {
         name: "Purple T-Shirt",
@@ -140,7 +154,8 @@ const products = [
         "orange":"https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt7-300x300.jpg"
         },
         rating: 2,
-        date:"2024-03-13"
+        date:"2024-03-13",
+        url: "../detail/PurpleTShirt.html"
     },
     {
         name: "Slim Fit Blue Jeans",
@@ -148,7 +163,8 @@ const products = [
         category: "Women",
         price: "$150.00",
         rating: 5,
-        date:"2024-03-11"
+        date:"2024-03-11",
+        url: "../detail/SlimFitBlueJeans.html"
     },
     {
         name: "White Underground T-shirt",
@@ -156,7 +172,8 @@ const products = [
         category: "Women",
         price: "$150.00",
         rating: 5,
-        date:"2024-03-1"
+        date:"2024-03-1",
+        url: "../detail/WhiteUndergroundTShirt.html"
     },
 ];
 
@@ -368,6 +385,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 cardBody.appendChild(rating);
             }
+    card.classList.add('card', 'mb-3');
+    card.addEventListener('click', () => {
+        window.location.href = product.url; // Navigate to product details page
+    });
     
             card.appendChild(imgContainer);
             card.appendChild(cardBody);

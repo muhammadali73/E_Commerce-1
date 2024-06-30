@@ -10,49 +10,56 @@ const products = [
             "orange": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory2-c-300x300.jpg"
         },
         rating: 5,
-        date:"2024-05-15"
+        date:"2024-05-15",
+        link: "../detail/anchor.html"
     }, {
         name: "Basic Grey Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans4-300x300.jpg",
         category: "Women",
         price: "$150.00",
         rating: 4,
-        date:"2024-05-18"
+        date:"2024-05-18",
+        link: "../detail/BasicGrayJeans.html"
     }, {
         name: "Black Hoodie",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-hoodie1.jpg",
         category: "Men",
         price: "$150.00",
         rating: 2,
-        date:"2024-02-01"
+        date:"2024-02-01",
+        link: "../detail/BlackHoodie.html"
     }, {
         name: "Black Over-the-shoulder Handbag",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag2-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
         rating: 3,
-        date:"2024-06-29"
+        date:"2024-06-29",
+        link: "../detail/ShoulderBag.html"
     }, {
         name: "Blue Denim Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans2-300x300.jpg",
         category: "women",
         price: "$150.00",
         rating: 2,
-        date:"2024-08-17"
+        date:"2024-08-17",
+        link: "../detail/BlueDenimJeans.html"
     }, {
         name: "Blue Denim Shorts",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-300x300.jpg",
         category: "Women",
         price: `$130.00`,
         rating: 5,
-        date:"2024-10-19"
+        date:"2024-10-19",
+        link: "../detail/BlueDenimShorts.html"
     }, {
         name: "Blue Hoodie",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-hoodie2-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 2,
-        date:"2024-12-26"
+        date:"2024-12-26",
+        link: "../detail/BlueHoodie.html"
     }, {
         name: "Blue T-Shirt",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt2-300x300.jpg",
@@ -65,9 +72,10 @@ const products = [
             "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt3-300x300.jpg"
         },
         rating: 1,
-        date:"2024-05-11"
+        date:"2024-05-11",
+        link: "../detail/BlueTShirt.html"
     }, {
-        name: "Baho Bangle Bracelet",
+        name: "Boho Bangle Bracelet",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory1-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
@@ -77,14 +85,16 @@ const products = [
             "red": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2022/08/product-accessory1-b-300x300.jpg"
         },
         rating: 3,
-        date:"2024-05-18"
+        date:"2024-05-18",
+        link: "../detail/BohoBangleBracelet.html"
     }, {
         name: "Bright Gold Purse With Chain",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag4-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
         rating: 4,
-        date:"2024-07-09"
+        date:"2024-07-09",
+        link: "../detail/GoldPurse.html"
     }, {
         name: "Bright Red Bag",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-300x300.jpg",
@@ -97,35 +107,40 @@ const products = [
             "red": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-300x300.jpg"
         },
         rating: 5,
-        date:"2024-02-13"
+        date:"2024-02-13",
+        link: "../detail/BrightRedBag.html"
     }, {
         name: "Buddha Bracelet",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory3-300x300.jpg",
         category: "Accessories",
         price: "$150.00",
         rating: 2,
-        date:"2024-11-01"
+        date:"2024-11-01",
+        link: "../detail/BuddhaBracelet.html"
     }, {
         name: "Dark Blue Denim Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans2-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 3,
-        date:"2024-08-07"
+        date:"2024-08-07",
+        link: "../detail/DarkBlueDenimJeans.html"
     }, {
         name: "Dark Brown Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans1-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 1,
-        date:"2024-11-05"
+        date:"2024-11-05",
+        link: "../detail/DarkBrownJeans.html"
     }, {
-        name: "Dark Grey Jeans",
+        name: "Dark Gray Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans4-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 5,
-        date:"2024-07-1"
+        date:"2024-07-1",
+        link: "../detail/DarkGrayJeans.html"
     }, {
         name: "DNK Black Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg",
@@ -139,6 +154,7 @@ const products = [
         },
         rating: 4,
         date:"2024-09-11",
+        link: "../detail/DNKBlackShoes.html"
     }, {
         name: "DNK Blue Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe1-300x300.jpg",
@@ -150,7 +166,8 @@ const products = [
             "palevioletred": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
         },
         rating: 1,
-        date:"2024-03-31"
+        date:"2024-03-31",
+        link: "../detail/DNKBlueShoes.html"
     }, {
         name: "DNK Green Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/sports-shoe4-300x300.jpg",
@@ -163,7 +180,8 @@ const products = [
             "red": "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg"
         },
         rating: 2,
-        date:"2024-03-21"
+        date:"2024-03-21",
+        link: "../detail/DNKGreenShoes.html"
     }, {
         name: "DNK Green T-Shirt",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt4-300x300.jpg",
@@ -175,28 +193,32 @@ const products = [
         "orange":"https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt7-300x300.jpg"
         },
         rating: 3,
-        date:"2024-03-06"
+        date:"2024-03-06",
+        link: "../detail/DNKGreenTShirt.html"
     }, {
         name: "DNK Red Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe2-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 3,
-        date:"2024-03-09"
+        date:"2024-03-09",
+        link: "../detail/DNKRedShoes.html"
     }, {
         name: "DNK Yellow Shoes",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/sports-shoe3-300x300.jpg",
         category: "Men",
         price: "$120.00",
         rating: 5,
-        date:"2024-03-19"
+        date:"2024-03-19",
+        link: "../detail/DNKYellowShoes.html"
     }, {
         name: "Faint Washed Denim Blue Jeans",
         imgurl: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans3-300x300.jpg",
         category: "Men",
         price: "$150.00",
         rating: 5,
-        date:"2024-03-05"
+        date:"2024-03-05",
+        link: "../detail/FaintBlueJeans.html"
     },
     {
         name: "Filmingo T-Shirt",
@@ -204,7 +226,8 @@ const products = [
         category: "Women",
         price: "$25.00 - $28.00",
         rating: 4,
-        date:"2024-03-18"
+        date:"2024-03-18",
+        link: "../detail/FilmingoTShirt.html"
     },
     {
         name: "Gray Pattern T-shirt",
@@ -218,7 +241,8 @@ const products = [
         "purple":"https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt3-300x300.jpg"
         },
         rating: 2,
-        date:"2024-03-17"
+        date:"2024-03-17",
+        link: "../detail/GrayPatternTShirt.html"
     },
     {
         name: "Green Hoodie",
@@ -226,7 +250,8 @@ const products = [
         category: "Men",
         price: "$150.00",
         rating: 4,
-        date:"2024-03-16"
+        date:"2024-03-16",
+        link: "../detail/GreenHoodie.html"
     },
     {
         name: "Lemons T-shirt",
@@ -234,7 +259,8 @@ const products = [
         category: "Women",
         price: "$25.00 - $28.00",
         rating: 2,
-        date:"2024-03-15"
+        date:"2024-03-15",
+        link: "../detail/LemonsTShirt.html"
     },
     {
         name: "Light Brown Purse",
@@ -242,7 +268,8 @@ const products = [
         category: "Accessories",
         price: "$150.00",
         rating: 1,
-        date:"2024-03-14"
+        date:"2024-03-14",
+        link: "../detail/LightBrownPurse.html"
     },
     {
         name: "Purple T-Shirt",
@@ -254,7 +281,8 @@ const products = [
         "orange":"https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2021/03/tshirt7-300x300.jpg"
         },
         rating: 2,
-        date:"2024-03-13"
+        date:"2024-03-13",
+        link: "../detail/PurpleTShirt.html"
     },
     {
         name: "Red Hoodie",
@@ -262,7 +290,8 @@ const products = [
         category: "Men",
         price: "$150.00",
         rating: 3,
-        date:"2024-03-12"
+        date:"2024-03-12",
+        link: "../detail/RedHoodie.html"
     },
     {
         name: "Slim Fit Blue Jeans",
@@ -270,7 +299,8 @@ const products = [
         category: "Women",
         price: "$150.00",
         rating: 5,
-        date:"2024-03-11"
+        date:"2024-03-11",
+        link: "../detail/SlimFitBlueJeans.html"
     },
     {
         name: "White Underground T-shirt",
@@ -278,7 +308,8 @@ const products = [
         category: "Women",
         price: "$150.00",
         rating: 5,
-        date:"2024-03-1"
+        date:"2024-03-1",
+        link: "../detail/WhiteUndergroundTShirt.html"
     },
 ];
 
@@ -371,12 +402,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return button;
     }
     
-    function displayProducts(page) {
-        currentPage = page;
-        // Logic to display products for the given page
-        createPagination(); // Update pagination after changing the page
-    }
-    
     // Initialize the pagination on page load or after setting sortedProducts and productsPerPage
     createPagination();
     
@@ -399,21 +424,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const startIndex = (page - 1) * productsPerPage;
         const endIndex = startIndex + productsPerPage;
         const productsToShow = sortedProducts.slice(startIndex, endIndex);
-
+    
         const productContainer = document.getElementById('product-container');
         productContainer.innerHTML = '';
-
+    
         if (productsToShow.length === 0) {
-            // Hide pagination, results summary, and product container
-            resultsSummary.textContent = ''; // Clear previous results summary
+            resultsSummary.textContent = ''; 
             productContainer.innerHTML = '<div class="no-results">No products were found matching your selection.</div>';
             pagination.style.display = 'none';      
-            return; // Exit the function
+            return;
         }
-
-        // If there are products to display, show the pagination and product container
+    
         resultsSummary.textContent = `Showing ${startIndex + 1}–${Math.min(endIndex, sortedProducts.length)} of ${sortedProducts.length} results`;
-
+    
         productsToShow.forEach(product => {
             const cardCol = document.createElement('div');
             cardCol.classList.add('col-lg-4', 'col-md-4', 'col-12');
@@ -424,15 +447,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const imgContainer = document.createElement('div');
             imgContainer.classList.add('img-container');
     
+            const imgLink = document.createElement('a');
+            imgLink.href = product.link;
+    
             const img = document.createElement('img');
             if (product.colors) {
-                img.src = product.colors[Object.keys(product.colors)[0]]; // Set default image if colors are available
+                img.src = product.colors[Object.keys(product.colors)[0]];
             } else {
-                img.src = product.imgurl; // Use default image url if colors are not available
+                img.src = product.imgurl;
             }
             img.alt = product.name;
             img.classList.add('card-img-top');
-            imgContainer.appendChild(img);
+            imgLink.appendChild(img);
+            imgContainer.appendChild(imgLink);
     
             const shoppingBag = document.createElement('div');
             shoppingBag.classList.add('shopping-bag');
@@ -443,10 +470,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
     
+            const nameLink = document.createElement('a');
+            nameLink.href = product.link;
             const name = document.createElement('h6');
             name.classList.add('card-title');
             name.textContent = product.name;
-            cardBody.appendChild(name);
+            nameLink.appendChild(name);
+            cardBody.appendChild(nameLink);
     
             const category = document.createElement('a');
             category.classList.add('card-text');
@@ -466,7 +496,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const btn = document.createElement('i');
                     btn.classList.add('fa-solid', 'fa-circle');
                     btn.style.color = colorOption;
-                    btn.title = colorOption; // Set the title attribute to show the color name on hover
+                    btn.title = colorOption;
                     btn.addEventListener('click', function() {
                         img.src = product.colors[colorOption];
                     });
@@ -480,11 +510,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const rating = document.createElement('div');
                 for (let i = 0; i < 5; i++) {
                     const star = document.createElement('i');
-                    star.classList.add('fas');
-                    star.classList.add('fa-star');
+                    star.classList.add('fas', 'fa-star');
                     if (i >= product.rating) {
                         star.classList.remove('fas');
-                        star.classList.add('far'); 
+                        star.classList.add('far');
                     }
                     rating.appendChild(star);
                 }
@@ -496,11 +525,10 @@ document.addEventListener('DOMContentLoaded', function() {
             cardCol.appendChild(card);
             productContainer.appendChild(cardCol);
         });
-
-        window.scrollTo(0, 0); // Scroll to top of the page after displaying products
-
-        initializeCartButtons(); // Initialize cart buttons after rendering products
-    }
+    
+        window.scrollTo(0, 0);
+        initializeCartButtons();
+    }    
 
     // Other functions remain unchanged...
 

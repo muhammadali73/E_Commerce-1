@@ -422,7 +422,144 @@ nav {
     font-size: 18px;
     margin-top: 15px;
 }
+#cartCanvas {
+    position: fixed;
+    top: 0;
+    right: 0%;
+    width: 34%;
+    height: 100%;
+    background-color: #FFFFFF;
+    transition: transform 0.7s ease-in-out;
+    z-index: 1000;
+}
 
+.cartClosed {
+    transform: translateX(100%);
+}
+
+#cartCanvas h6 {
+    padding: 25px 28px 0 28px;
+    color: #000;
+}
+
+#cartCanvas .carts {
+    width: 100%;
+    height: 78%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carts p {
+    color: #757575;
+}
+
+.subtotal h5{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 16px;
+    color: rgb(71, 70, 70);
+}
+
+.btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.off-btn {
+    width: 90%;
+    background-color: #0075CB;
+    padding: 10px 0;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.cartOpen {
+    transform: translateX(0);
+}
+
+#cartCanvas .closeIcon {
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border: none !important;
+    font-size: 20px;
+}
+
+/* Add this to your existing CSS file */
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.fa-times {
+    border-radius: 50%;
+    border: 1px solid gray;
+    height: 23px;
+    width: 23px;
+    color: gray;
+    padding: 2px;
+    transition: color 0.5s;
+    line-height: 1.12 !important;
+}
+
+.fa-times:hover {
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 4px 20px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.push-image {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.push-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.cart-item-details span {
+    flex-grow: 1;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+
+.cart-item-details .item-name {
+    flex-grow: 1; /* Adjust width as needed */
+}
+
+.remove-btn {
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
 /* =========================================footer============================================ */
 
 .footer-container {

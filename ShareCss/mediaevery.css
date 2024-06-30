@@ -26,7 +26,7 @@
         display: block;
     }
     .mob-nav{
-        right: 12%;
+        right: 7%;
     }
     .right-left{
         flex-direction: column;
@@ -86,7 +86,7 @@
 }
 @media screen and (max-width: 767px) {
     .mob-nav{
-        right: 16%;
+        right: 10.5%;
     }
     .logo-mob{
         height: 35px;
@@ -120,10 +120,13 @@
     .footer-items a{
         text-align: center;
     }
+    #cartCanvas{
+        width: 50%;
+    }
 }
 @media screen and (max-width: 580px) {
     .mob-nav{
-        right: 22%;
+        right: 16%;
     }
     .logo-mob{
         height: 30px;
@@ -192,11 +195,14 @@
     }
     .foot-4 input{
         width: 133%;
-    }   
+    } 
+    #cartCanvas{
+        width: 60%;
+    }  
 }
 @media screen and (max-width: 400px) {
     .mob-nav{
-        right: 28%;
+        right: 18%;
     }
     .dropdown{
         left: 51%;
@@ -222,6 +228,10 @@
         font-size: 18px;
         text-align: center;
     }
+    #cartCanvas{
+        width: 80%;
+    }
+    
 }
 @media screen and (max-width:320px) {
     .left-side #search-input{

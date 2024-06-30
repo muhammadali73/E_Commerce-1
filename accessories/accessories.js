@@ -11,7 +11,7 @@ const products = [
         },
         rating: 5,
         date: "2024-05-15",
-        url: "../detail/anchor.html"    
+        url: "../detail/anchor.html" 
     },
     {
         name: "Black Over-the-shoulder Handbag",
@@ -20,7 +20,8 @@ const products = [
         price: "$150.00",
         rating: 3,
         date: "2024-06-29",
-        url: "https://example.com/black-over-the-shoulder-handbag"
+        url: "https://example.com/black-over-the-shoulder-handbag",
+        url: "../detail/ShoulderBag.html"
     },
     {
         name: "Baho Bangle Bracelet",
@@ -34,7 +35,7 @@ const products = [
         },
         rating: 3,
         date: "2024-05-18",
-        url: "https://example.com/baho-bangle-bracelet"
+        url: "../detail/BahoBangleBracelet.html"
     },
     {
         name: "Bright Gold Purse With Chain",
@@ -43,7 +44,7 @@ const products = [
         price: "$150.00",
         rating: 4,
         date: "2024-07-09",
-        url: "https://example.com/bright-gold-purse-with-chain"
+        url: "../detail/brightGoldPurse.html"    
     },
     {
         name: "Bright Red Bag",
@@ -58,7 +59,7 @@ const products = [
         },
         rating: 5,
         date: "2024-02-13",
-        url: "https://example.com/bright-red-bag"
+        url: "../detail/BrightRedPurse.html"
     },
     {
         name: "Buddha Bracelet",
@@ -67,7 +68,7 @@ const products = [
         price: "$150.00",
         rating: 2,
         date: "2024-11-01",
-        url: "https://example.com/buddha-bracelet"
+        url: "../detail/buddhaBracelet.html"
     },
 ];
 

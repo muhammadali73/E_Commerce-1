@@ -58,10 +58,12 @@ nav {
 .fa-bag-shopping {
     font-size: 18px !important;
 }
-.active{
+
+.active {
     color: #0075CB !important;
 }
-.fa-user{
+
+.fa-user {
     position: relative;
     top: -1px;
 }
@@ -87,11 +89,13 @@ nav {
     right: 8%;
     top: 10%;
 }
-.tp{
+
+.tp {
     width: 109px;
     position: relative;
     top: -3px;
 }
+
 .off-canvas {
     position: fixed;
     top: 0;
@@ -187,9 +191,11 @@ nav {
     border: 1px solid #ccc;
     margin-bottom: 20px;
 }
-.nav-item .active{
+
+.nav-item .active {
     color: #0075CB;
 }
+
 #search-button {
     background-color: #0075bed7;
     color: white;
@@ -270,6 +276,7 @@ a {
     object-fit: cover;
     cursor: pointer;
 }
+
 .fa-star {
     color: rgb(59, 58, 58);
     font-size: 13px;
@@ -298,11 +305,13 @@ a {
 }
 
 .pagination .page-item:first-child {
-    margin-right: 12px; /* Ensure gap between "Prev" and "1" */
+    margin-right: 12px;
+    /* Ensure gap between "Prev" and "1" */
 }
 
 .pagination .page-item:last-child {
-    margin-right: 0; /* Remove extra space after the last item */
+    margin-right: 0;
+    /* Remove extra space after the last item */
 }
 
 .fa-circle {
@@ -348,42 +357,43 @@ select:focus {
     text-align: left;
     margin: 45px 0 10px 0;
     width: 88%;
-  }
-  
-  [slider] > div {
+}
+
+[slider]>div {
     position: absolute;
     left: 13px;
     right: 15px;
     height: 4px;
-  }
-  
-  [slider] > div > [inverse-left] {
+}
+
+[slider]>div>[inverse-left] {
     position: absolute;
     left: 0;
     height: 4px;
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.336);
     margin: 0 7px;
-  }
-  
-  [slider] > div > [inverse-right] {
+}
+
+[slider]>div>[inverse-right] {
     position: absolute;
     right: 0;
     height: 4px;
     border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.336);;
+    background-color: rgba(128, 128, 128, 0.336);
+    ;
     margin: 0 7px;
-  }
-  
-  [slider] > div > [range] {
+}
+
+[slider]>div>[range] {
     position: absolute;
     left: 0;
     height: 4px;
     border-radius: 14px;
     background-color: #000;
-  }
-  
-  [slider] > div > [thumb] {
+}
+
+[slider]>div>[thumb] {
     position: absolute;
     top: -7px;
     z-index: 2;
@@ -395,9 +405,9 @@ select:focus {
     background-color: #000;
     border-radius: 50%;
     outline: none;
-  }
-  
-  [slider] > input[type=range] {
+}
+
+[slider]>input[type=range] {
     position: absolute;
     pointer-events: none;
     -webkit-appearance: none;
@@ -411,48 +421,48 @@ select:focus {
     -khtml-opacity: 0;
     opacity: 0;
     cursor: pointer;
-  }
-  
-  div[slider] > input[type=range]::-ms-track {
+}
+
+div[slider]>input[type=range]::-ms-track {
     -webkit-appearance: none;
     background: transparent;
     color: transparent;
-  }
-  
-  div[slider] > input[type=range]::-moz-range-track {
+}
+
+div[slider]>input[type=range]::-moz-range-track {
     -moz-appearance: none;
     background: transparent;
     color: transparent;
-  }
-  
-  div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+}
+
+div[slider]>input[type=range]:focus::-webkit-slider-runnable-track {
     background: transparent;
     border: transparent;
-  }
-  
-  div[slider] > input[type=range]:focus {
+}
+
+div[slider]>input[type=range]:focus {
     outline: none;
-  }
-  
-  div[slider] > input[type=range]::-ms-thumb {
+}
+
+div[slider]>input[type=range]::-ms-thumb {
     pointer-events: all;
     width: 28px;
     height: 28px;
     border-radius: 0px;
     border: 0 none;
     background: red;
-  }
-  
-  div[slider] > input[type=range]::-moz-range-thumb {
+}
+
+div[slider]>input[type=range]::-moz-range-thumb {
     pointer-events: all;
     width: 28px;
     height: 28px;
     border-radius: 0px;
     border: 0 none;
     background: red;
-  }
-  
-  div[slider] > input[type=range]::-webkit-slider-thumb {
+}
+
+div[slider]>input[type=range]::-webkit-slider-thumb {
     pointer-events: all;
     width: 28px;
     height: 28px;
@@ -460,28 +470,28 @@ select:focus {
     border: 0 none;
     background: red;
     -webkit-appearance: none;
-  }
-  
-  div[slider] > input[type=range]::-ms-fill-lower {
+}
+
+div[slider]>input[type=range]::-ms-fill-lower {
     background: transparent;
     border: 0 none;
-  }
-  
-  div[slider] > input[type=range]::-ms-fill-upper {
+}
+
+div[slider]>input[type=range]::-ms-fill-upper {
     background: transparent;
     border: 0 none;
-  }
-  
-  div[slider] > input[type=range]::-ms-tooltip {
+}
+
+div[slider]>input[type=range]::-ms-tooltip {
     display: none;
-  }
-  
-  [slider] > div > [sign] {
+}
+
+[slider]>div>[sign] {
     opacity: 0;
     position: absolute;
     top: -39px;
     left: 0px;
-    z-index:3;
+    z-index: 3;
     /* background-color: #000; */
     color: #fff;
     width: 28px;
@@ -493,9 +503,9 @@ select:focus {
     justify-content: center;
     text-align: center;
     color: #000;
-  }
-  
-  [slider] > div > [sign]:after {
+}
+
+[slider]>div>[sign]:after {
     position: absolute;
     content: '';
     left: -15px;
@@ -507,17 +517,17 @@ select:focus {
     border-top-style: solid;
     border-top-color: #000;
     display: none;
-  }
-  
-  [slider] > div > [sign] > span {
+}
+
+[slider]>div>[sign]>span {
     font-size: 12px;
     font-weight: 700;
     line-height: 28px;
-  }
-  
-  [slider]:hover > div > [sign] {
+}
+
+[slider]:hover>div>[sign] {
     opacity: 1;
-  }
+}
 
 .values {
     display: flex;
@@ -619,23 +629,28 @@ select:focus {
 .img-container {
     position: relative;
 }
-.category{
+
+.category {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 25px 0 0;
 }
-.category a{
+
+.category a {
     color: #000;
     font-weight: 500;
 }
-.category a:hover{
+
+.category a:hover {
     color: #0075CB;
 }
-.category p{
+
+.category p {
     color: #262727cc;
 }
-.top-seller-cards{
+
+.top-seller-cards {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -643,99 +658,264 @@ select:focus {
     width: 100%;
     margin-top: 30px;
 }
-.cd img{
+
+.cd img {
     width: 60px;
     height: 60px;
 }
-.cd{
+
+.cd {
     display: flex;
     width: 100%;
     gap: 10px;
 }
-.cd-text{
+
+.cd-text {
     position: relative;
     top: -5px;
 }
-.cd-text a{
+
+.cd-text a {
     color: #000;
     font-weight: 500;
 }
-.stars{
+
+.stars {
     display: flex;
     gap: -5px;
     margin: 7px 0;
 }
-        /* =========================================footer============================================ */
 
-        .footer-container {
-            width: 100%;
-            background-color: #fff;
-            border-bottom: 1px solid rgba(128, 128, 128, 0.212);
-            padding: 50px 75px !important;
-            margin-top: 40px;
-        }
-        .footer-container h4{
-            font-size: 27px;
-            font-weight: 700;
-            transition: all .7s;
-        }
-        .footer-container h4:hover{
-            color: #0075CB;
-            cursor: pointer;
-        }
-        .footer-items{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px 80px !important;
-            background-color: #fff !important;
-            border-bottom: 1px solid rgba(128, 128, 128, 0.212);
-        }
-        .foot-1{
-            align-items: center;
-        }
-        .foot-1,.foot-2,.foot-3,.foot-4,.foot-5{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .foot-1 h4{
-            font-weight: 700;
-            margin-top: 20px;
-            font-size: 22px;
-            color: #000;
-        }
-        .foot-2 h5 ,.foot-3 h5{
-            color: #000;
-            font-weight: 500;
-            font-size: 21px;
-        }
-        .foot-2 a,.foot-3 a{
-            text-decoration: none;
-            color: #757575;
-        }
-        .foot-2 a:hover,.foot-3 a:hover{
-            color: #0075CB;
-        }
-        .foot-4 input{
-            padding: 10px 30px 10px 10px;
-            border: 1px solid rgba(128, 128, 128, 0.5);
-        }
-        .foot-4 input:focus{
-            border: 1px solid rgba(128, 128, 128, 0.452)!important;
-        }
-        .foot-4 button{
-            width: 120px;
-            border-radius: 1px !important;
-            height: 40px;
-            margin-top: 10px;
-            color: #fff;
-            font-size: 14px;
-            letter-spacing: 1.1;
-            font-weight: 700;
-        }
-        .foot-4 form{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
+#cartCanvas {
+    position: fixed;
+    top: 0;
+    right: 0%;
+    width: 34%;
+    height: 100%;
+    background-color: #FFFFFF;
+    transition: transform 0.7s ease-in-out;
+    z-index: 1000;
+}
+
+.cartClosed {
+    transform: translateX(100%);
+}
+
+#cartCanvas h6 {
+    padding: 25px 28px 0 28px;
+    color: #000;
+}
+
+#cartCanvas .carts {
+    width: 100%;
+    height: 78%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carts p {
+    color: #757575;
+}
+
+.subtotal h5{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 16px;
+    color: rgb(71, 70, 70);
+}
+
+.btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.off-btn {
+    width: 90%;
+    background-color: #0075CB;
+    padding: 10px 0;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.cartOpen {
+    transform: translateX(0);
+}
+
+#cartCanvas .closeIcon {
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border: none !important;
+    font-size: 20px;
+}
+
+/* Add this to your existing CSS file */
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.fa-times {
+    border-radius: 50%;
+    border: 1px solid gray;
+    height: 23px;
+    width: 23px;
+    color: gray;
+    padding: 2px;
+    transition: color 0.5s;
+    line-height: 1.12 !important;
+}
+
+.fa-times:hover {
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 4px 20px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.push-image {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.push-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.cart-item-details span {
+    flex-grow: 1;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+
+.cart-item-details .item-name {
+    flex-grow: 1; /* Adjust width as needed */
+}
+
+.remove-btn {
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+}
+
+/* =========================================footer============================================ */
+
+.footer-container {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+    padding: 50px 75px !important;
+    margin-top: 40px;
+}
+
+.footer-container h4 {
+    font-size: 27px;
+    font-weight: 700;
+    transition: all .7s;
+}
+
+.footer-container h4:hover {
+    color: #0075CB;
+    cursor: pointer;
+}
+
+.footer-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 80px !important;
+    background-color: #fff !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+}
+
+.foot-1 {
+    align-items: center;
+}
+
+.foot-1,
+.foot-2,
+.foot-3,
+.foot-4,
+.foot-5 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.foot-1 h4 {
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 22px;
+    color: #000;
+}
+
+.foot-2 h5,
+.foot-3 h5 {
+    color: #000;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+.foot-2 a,
+.foot-3 a {
+    text-decoration: none;
+    color: #757575;
+}
+
+.foot-2 a:hover,
+.foot-3 a:hover {
+    color: #0075CB;
+}
+
+.foot-4 input {
+    padding: 10px 30px 10px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.foot-4 input:focus {
+    border: 1px solid rgba(128, 128, 128, 0.452) !important;
+}
+
+.foot-4 button {
+    width: 120px;
+    border-radius: 1px !important;
+    height: 40px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1.1;
+    font-weight: 700;
+}
+
+.foot-4 form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

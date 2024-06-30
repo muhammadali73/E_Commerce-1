@@ -29,7 +29,7 @@
         display: block;
     }
     .mob-nav{
-        right: 12%;
+        right: 7%;
     }
     .cards{
         flex-direction: column;
@@ -84,7 +84,7 @@
         font-size: 24px;
     }
     .mob-nav{
-        right: 15%;
+        right: 10.5%;
     }
     .special-text p{
         line-height: 1.5;
@@ -125,6 +125,9 @@
     .foot-4 input{
         width: 200%;
     }
+    #cartCanvas{
+        width: 50%;
+    }
 }
 @media screen and (max-width:767px) {
     .row1 img{
@@ -154,7 +157,7 @@
         text-align: center;
     }
     .mob-nav{
-        right: 21%;
+        right: 16%;
     }
     .hero-text h4{
         font-size: 20px;
@@ -182,6 +185,10 @@
         .swiper-container {
             margin: 70px 50px 0 40px !important;
         }
+        #cartCanvas{
+            width: 60%;
+        }
+
 }
 @media screen and (max-width:523px) {
     .special-text{
@@ -203,10 +210,13 @@
     .foot-4 input{
         width: 130%;
     }
+    #cartCanvas{
+        width: 80%;
+    }
 }
 @media screen and (max-width:400px) {
     .mob-nav{
-        right: 26%;
+        right: 18%;
     }
     .footer-container h4{
         font-size: 18px;
